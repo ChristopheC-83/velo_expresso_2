@@ -1,0 +1,21 @@
+.alert {
+  width: 60%;
+  min-height: 40px;
+  margin: 10px auto;
+  @include flexMid;
+  font-weight: bold;
+  font-size: 18px;
+  border: 2px solid #f1f1f1;
+  border-radius: 10px;
+  color: #333;
+}
+
+.rouge {
+  background-color: crimson;
+}
+.orange {
+  background-color: rgb(255, 150, 14);
+}
+.vert {
+  background-color: greenyellow;
+}

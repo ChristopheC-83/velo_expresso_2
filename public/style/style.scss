@@ -1,0 +1,17 @@
+@import "libs/variables";
+@import "libs/reset";
+@import "libs/mixins";
+@import "communs/header_menu";
+@import "communs/footer";
+@import "communs/titres";
+@import "communs/alertes";
+
+body {
+  background-color: #333;
+  color:#f1f1f1;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height:100vh;
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
+}
