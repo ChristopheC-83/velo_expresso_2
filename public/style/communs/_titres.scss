@@ -4,7 +4,7 @@
     margin: 25px auto;
 
     h1{
-        font-size: 40px;
+        font-size: clamp(20px,calc(20px + 1vw) ,40px);
         text-align: center;
         text-decoration: underline;
         text-underline-offset: 10px;

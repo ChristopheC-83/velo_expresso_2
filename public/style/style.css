@@ -1,3 +1,54 @@
+.entryForm {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  width: 50%;
+  margin: 0 auto;
+}
+.entryForm label {
+  margin: 15px 0;
+}
+.entryForm input {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 18px;
+  outline-color: violet;
+}
+.entryForm input:focus {
+  box-shadow: 3px 3px 6px violet;
+}
+.entryForm button {
+  height: 40px;
+  border-radius: 5px;
+  margin: 50px 0;
+  font-size: 20px;
+  box-shadow: -8px 0px 10px 5px violet;
+  transition: all 1.5s;
+  position: relative;
+  cursor: pointer;
+}
+.entryForm button:before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  height: 100%;
+  width: 0px;
+  background-color: rgb(116, 4, 116);
+  z-index: -1;
+  top: 0;
+  left: 0;
+  transition: all 1.5s;
+}
+.entryForm button:hover {
+  box-shadow: 8px 0px 10px 5px violet;
+  color: #f1f1f1;
+  z-index: 2;
+}
+.entryForm button:hover:before {
+  width: 100%;
+}
+
 /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
 html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -89,7 +140,7 @@ footer {
   margin: 25px auto;
 }
 .animTitres h1 {
-  font-size: 40px;
+  font-size: clamp(20px, 20px + 1vw, 40px);
   text-align: center;
   text-decoration: underline;
   text-underline-offset: 10px;
@@ -129,6 +180,10 @@ footer {
 
 .vert {
   background-color: greenyellow;
+}
+
+.form_entry_form {
+  width: 100%;
 }
 
 body {
