@@ -10,5 +10,4 @@ function getUtilisateurs(){
     $req -> closeCursor();
     return $datas;
 
-
 }

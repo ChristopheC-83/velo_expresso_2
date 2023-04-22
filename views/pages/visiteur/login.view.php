@@ -12,17 +12,13 @@
             <label for="password">Password : </label>
             <input type="password" id="password" name="password">
         </div>
+
         <div class="entryForm">
-            <label for="verif_password">Vérification Password : </label>
-            <input type="password" id="verif_password" name="verif_password">
+            <!-- Pour éviter d'envoyer à l'appui de la touche ENTER -->
+            <!-- <input class="buttonEntryForm" type="button" value="Connexion"onclick="submit()"> -->
+            <!-- sinon : -->
+            <button>Connexion</button>
         </div>
-        <div class="entryForm">
-            <button>Créer compte</button>
-        </div>
-
-
-
-
 
     </form>
 

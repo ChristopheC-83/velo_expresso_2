@@ -25,3 +25,5 @@ function ajouterMessageAlerte($message, $type)
         "type" => $type
     ];
 }
+
+

@@ -5,9 +5,10 @@ session_start();
 define("URL", str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https"  : "http") . "://" . $_SERVER['HTTP_HOST'] .
     $_SERVER["PHP_SELF"]));
 
-// require_once("./controllers/mainController.controller.php");
 require_once("./controllers/visiteur/visiteur.controller.php");
+require_once("./controllers/utilisateur/utilisateur.controller.php");
 require_once("./controllers/functionController.controller.php");
+require_once("./controllers/security.controller.php");
 
 try {
     if (empty($_GET['page'])) {
@@ -25,9 +26,40 @@ try {
             pageLogin();
             break;
         case "validation_login":
-            afficherTableau($_POST);
+            if (!empty($_POST['login']) && !empty($_POST['password'])) {
+                $login = secureHTML($_POST['login']);
+                $password = secureHTML($_POST['password']);
+                validation_login($login, $password);
+            } else {
+                ajouterMessageAlerte('Login ou mot de passe non renseigné.', 'rouge');
+                header('location:' . URL . "login");
+                exit;
+            }
             break;
-        
+        case "creerCompte":
+            creerCompte();
+            break;
+        case "validation_creerCompte":
+            echo "ok";
+            break;
+        case "compte":
+            if (!estConnecte()) {
+                header('location:' . URL . "accueil");
+                session_unset();
+                ajouterMessageAlerte("Vous devez vous connecter ou vous inscrire.", "orange");
+            } else {
+                switch ($url[1]) {
+                    case "profil":
+                        profil();
+                        break;
+                    case "deconnexion":
+                        deconnexion();
+                        break;
+                    default:
+                        throw new Exception("La page demandée n'existe pas.");
+                }
+            }
+            break;
         default:
             throw new Exception("La page demandée n'existe pas.");
     }

@@ -1,6 +1,6 @@
 <?php
 
-// require_once ("./controllers/mainController.controller.php");
+// require_once("./controllers/mainController.controller.php");
 require_once("./controllers/functionController.controller.php");
 require_once("./models/visiteur/visiteur.model.php");
 require_once("./controllers/functionController.controller.php");
@@ -8,7 +8,6 @@ require_once("./controllers/functionController.controller.php");
 
 function pageAccueil()
 {
-    $utilisateurs = getUtilisateurs();
 
     $data_page = [
         "page_description" => "Description accueil",
@@ -16,7 +15,6 @@ function pageAccueil()
         "view" => "views/pages/visiteur/accueil.view.php",
         "template" => "views/commons/template.php",
         "css" => "accueilContainer",
-        "utilisateurs" => $utilisateurs,
 
     ];
     genererPage($data_page);
@@ -45,6 +43,21 @@ function pageLogin()
         "view" => "views/pages/visiteur/login.view.php",
         "template" => "views/commons/template.php",
         "css" => "loginContainer",
+
+    ];
+    genererPage($data_page);
+}
+
+function creerCompte()
+{
+
+    $data_page = [
+        "page_description" => "Page de création compte",
+        "page_title" => "Enregistrement",
+        "view" => "views/pages/visiteur/creerCompte.view.php",
+        "template" => "views/commons/template.php",
+        "css" => "creationContainer",
+        "js"=>["gestionComptes.js"],
 
     ];
     genererPage($data_page);

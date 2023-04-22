@@ -18,17 +18,17 @@
 .entryForm input:focus {
   box-shadow: 3px 3px 6px violet;
 }
-.entryForm button {
+.entryForm button, .entryForm .buttonEntryForm {
   height: 40px;
   border-radius: 5px;
   margin: 50px 0;
   font-size: 20px;
-  box-shadow: -8px 0px 10px 5px violet;
+  box-shadow: 0px 0px 2px 2px violet;
   transition: all 1.5s;
   position: relative;
   cursor: pointer;
 }
-.entryForm button:before {
+.entryForm button:before, .entryForm .buttonEntryForm:before {
   content: "";
   position: absolute;
   display: inline-block;
@@ -40,13 +40,43 @@
   left: 0;
   transition: all 1.5s;
 }
-.entryForm button:hover {
-  box-shadow: 8px 0px 10px 5px violet;
+.entryForm button:after, .entryForm .buttonEntryForm:after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  height: 100%;
+  width: 0px;
+  background-color: rgb(116, 4, 116);
+  z-index: -1;
+  top: 0;
+  right: 0;
+  transition: all 1.5s;
+}
+.entryForm button:hover, .entryForm .buttonEntryForm:hover {
+  box-shadow: 0px 0px 10px 10px violet;
   color: #f1f1f1;
   z-index: 2;
 }
-.entryForm button:hover:before {
-  width: 100%;
+.entryForm button:hover:before, .entryForm .buttonEntryForm:hover:before {
+  width: 50%;
+}
+.entryForm button:hover:after, .entryForm .buttonEntryForm:hover:after {
+  width: 50%;
+}
+
+.bouton_inactif {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.bouton_inactif:after {
+  display: none;
+}
+.bouton_inactif:before {
+  display: none;
+}
+
+.dnone {
+  display: none;
 }
 
 /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
@@ -157,9 +187,9 @@ footer {
 }
 
 .alert {
-  width: 60%;
+  width: 45%;
   min-height: 40px;
-  margin: 10px auto;
+  margin: 20px auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -168,10 +198,12 @@ footer {
   border: 2px solid #f1f1f1;
   border-radius: 10px;
   color: #333;
+  text-align: center;
+  padding: 5px 0;
 }
 
 .rouge {
-  background-color: crimson;
+  background-color: rgb(243, 48, 87);
 }
 
 .orange {
