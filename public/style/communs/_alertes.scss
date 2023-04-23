@@ -1,8 +1,9 @@
 .alert {
-  width:45%;
-  min-height: 40px;
+  width:80%;
+  min-height: 60px;
   margin: 20px auto;
   @include flexMid;
+  flex-direction: column;
   font-weight: bold;
   font-size: 18px;
   border: 2px solid #f1f1f1;

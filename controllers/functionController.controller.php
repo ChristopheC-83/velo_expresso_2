@@ -26,4 +26,13 @@ function ajouterMessageAlerte($message, $type)
     ];
 }
 
-
+function sendMail($destinataire, $sujet, $message)
+{
+    $headers = "From : Kiki de la casa";
+    if (mail($destinataire, $sujet, $message, $headers)) {
+        ajouterMessageAlerte("Mail envoyé ! <br> Allez regarder votre boîtes !", "vert");
+    } else {
+        ajouterMessageAlerte("Mail non parti à ".$destinataire." ! <br> Merci de réessayer.", "rouge");
+        
+    }
+}

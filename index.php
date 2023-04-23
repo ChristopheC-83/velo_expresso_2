@@ -40,7 +40,21 @@ try {
             creerCompte();
             break;
         case "validation_creerCompte":
-            echo "ok";
+            if (!empty($_POST['login']) && !empty($_POST['password']) && !empty($_POST['mail'])) {
+                $login = secureHTML($_POST['login']);
+                $password = secureHTML($_POST['password']);
+                $mail = secureHTML($_POST['mail']);
+                validation_creerCompte($login, $password, $mail);
+            } else {
+                ajouterMessageAlerte("Les 3 champs sont obligatoires !", "rouge");
+                header('location:' . URL . "creerCompte");
+            }
+            break;
+        case "renvoyerMailValidation":
+            renvoyerMailValidation($url[1]);
+            break;
+        case "validationMail":
+            validation_mailCompte($url[1], $url[2]);
             break;
         case "compte":
             if (!estConnecte()) {
