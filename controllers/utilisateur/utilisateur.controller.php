@@ -38,6 +38,7 @@ function profil()
         "view" => "views/pages/utilisateur/profil.view.php",
         "template" => "views/commons/template.php",
         "css" => "profilContainer",
+        "js" => ['profil.js'],
         "utilisateur" => $datas,
     ];
     genererPage($data_page);
