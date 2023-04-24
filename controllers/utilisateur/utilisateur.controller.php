@@ -95,6 +95,13 @@ function validation_mailCompte($login, $cle){
         ajouterMessageAlerte("Le compte n'a pas été activé", "rouge");
         header('location:' . URL . "creerCompte");
     }
+}
 
-
+function validation_modificationMail($mail){
+    if(bdModifMailUser($_SESSION['profil']['login'], $mail)){
+        ajouterMessageAlerte("Le mail est modifié.", "vert");
+    } else{
+        ajouterMessageAlerte("Aucune modification effectuée.", "rouge");
+    }
+    header('location:' . URL . "compte/profil");
 }

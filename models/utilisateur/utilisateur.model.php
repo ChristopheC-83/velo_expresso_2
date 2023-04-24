@@ -79,5 +79,18 @@ function bdValidationMailCompte($login, $cle)
     $validationOk = ($stmt->rowCount() > 0);
     $stmt->closeCursor();
     return $validationOk;
+}
 
+function bdModifMailUser($login, $mail)
+{
+    $req = "UPDATE user_management set mail = :mail 
+            WHERE login = :login
+            ";
+    $stmt = getBDD()->prepare($req);
+    $stmt->bindValue(":login", $login, PDO::PARAM_STR);
+    $stmt->bindValue(":mail", $mail, PDO::PARAM_STR);
+    $stmt->execute();
+    $validationOk = ($stmt->rowCount() > 0);
+    $stmt->closeCursor();
+    return $validationOk;
 }

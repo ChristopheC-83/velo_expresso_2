@@ -10,9 +10,9 @@
     <br>
     <div id="modif_mail" class="dnone">
     <br>
-        <form action="<?URL?>compte/validation_modificationMail" method="post" class="form_entry_form">
+        <form action="<?=URL?>compte/validation_modificationMail" method="post" class="form_entry_form">
             <div class="entryForm">
-                <input type="text" id="login" name="login" placeholder="Nouveau Mail">
+                <input type="mail" id="mail" name="mail" placeholder="Nouveau Mail">
             </div>
             <div class="entryForm">
                 <button id="btn_validation__modif_mail">Valider nouveau mail</button>

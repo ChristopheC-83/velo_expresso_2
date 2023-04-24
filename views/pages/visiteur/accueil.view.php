@@ -4,6 +4,7 @@
     <h2>Accueil Contiendra</h2>
 
     <p>Contenu Accueil</p>
+    <?php afficherTableau($_SESSION )?>
 
    
     
