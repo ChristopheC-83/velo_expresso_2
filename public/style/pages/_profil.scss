@@ -1,0 +1,31 @@
+.profilContainer {
+  i {
+    cursor: pointer;
+  }
+
+  .formPsw {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .btn_disable {
+    pointer-events: none;
+    background-color: #c4c4c4;
+    box-shadow: none;
+    opacity: 0.5;
+  }
+
+  .btn_info {
+    background-color: rgb(245, 75, 75);
+    box-shadow: 0px 0px 0px red;
+    font-size: 16px;
+    pointer-events: none;
+    margin: 10px 0;
+    &:after {
+      display: none;
+    }
+    &:before {
+      display: none;
+    }
+  }
+}

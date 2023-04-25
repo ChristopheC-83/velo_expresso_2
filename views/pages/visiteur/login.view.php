@@ -2,7 +2,7 @@
 
     <h1>Page de connexion</h1>
 
-    <form action="validation_login" method="post" class="form_entry_form">
+    <form action="<?=URL?>validation_login" method="post" class="form_entry_form">
 
         <div class="entryForm">
             <label for="login">Nom : </label>

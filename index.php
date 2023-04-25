@@ -72,6 +72,9 @@ try {
                     case "validation_modificationMail":
                         validation_modificationMail(secureHTML($_POST['mail']));
                         break;
+                    case "validation_modificationMDP":
+                        validation_modificationMDP(secureHTML($_POST['login']));
+                        break;
                     default:
                         throw new Exception("La page demandée n'existe pas.");
                 }
