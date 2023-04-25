@@ -19,7 +19,7 @@ function isCombinaisonValide($login, $password)
 {
     $passwordBd = getPasswordUser($login);
     // on compare le password de la bd et celui du formulaire
-    afficherTableau($passwordBd);
+    // afficherTableau($passwordBd);
     return password_verify($password, $passwordBd);
 }
 
@@ -93,4 +93,31 @@ function bdModifMailUser($login, $mail)
     $validationOk = ($stmt->rowCount() > 0);
     $stmt->closeCursor();
     return $validationOk;
+}
+function bdModifMDP($login, $password)
+{
+    $req = "UPDATE user_management set password = :password 
+            WHERE login = :login
+            ";
+    $stmt = getBDD()->prepare($req);
+    $stmt->bindValue(":login", $login, PDO::PARAM_STR);
+    $stmt->bindValue(":password", $password, PDO::PARAM_STR);
+    $stmt->execute();
+    $validationOk = ($stmt->rowCount() > 0);
+    $stmt->closeCursor();
+    return $validationOk;
+}
+
+
+function bdSuppCompte($login)
+{
+    $req = "DELETE FROM user_management 
+            WHERE login = :login
+            ";
+    $stmt = getBDD()->prepare($req);
+    $stmt->bindValue(":login", $login, PDO::PARAM_STR);
+    $stmt->execute();
+    $suppressionOk = ($stmt->rowCount() > 0);
+    $stmt->closeCursor();
+    return $suppressionOk;
 }

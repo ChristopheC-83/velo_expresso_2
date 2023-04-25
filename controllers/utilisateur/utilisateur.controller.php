@@ -16,8 +16,8 @@ function validation_login($login, $password)
             ];
             header('location:' . URL . "compte/profil");
         } else {
-            $msg = "Le compte de " . $login . " n'a pas été activé. <br> Contrôlez vos mails ! <br> <a href='renvoyerMailValidation/".$login."'>Renvoyer le mail de validation</a>";
-            
+            $msg = "Le compte de " . $login . " n'a pas été activé. <br> Contrôlez vos mails ! <br> <a href='renvoyerMailValidation/" . $login . "'>Renvoyer le mail de validation</a>";
+
             ajouterMessageAlerte($msg, "rouge");
             header('location:' . URL . "login");
         }
@@ -78,30 +78,66 @@ function sendMailValidation($login, $mail, $cle)
     sendMail($mail, $sujet, $message);
 }
 
-function renvoyerMailValidation($login){
+function renvoyerMailValidation($login)
+{
     $utilisateur = getUserInformation($login);
     sendMailValidation($login, $utilisateur['mail'], $utilisateur['cle']);
     header('location:' . URL . "login");
 }
 
-function validation_mailCompte($login, $cle){
-    if(bdValidationMailCompte($login, $cle)){
-        ajouterMessageAlerte("Le compte de ".$login." a été activé", "vert");
+function validation_mailCompte($login, $cle)
+{
+    if (bdValidationMailCompte($login, $cle)) {
+        ajouterMessageAlerte("Le compte de " . $login . " a été activé", "vert");
         $_SESSION['profil'] = [
             "login" => $login,
         ];
         header('location:' . URL . "compte/profil");
-    }else{
+    } else {
         ajouterMessageAlerte("Le compte n'a pas été activé", "rouge");
         header('location:' . URL . "creerCompte");
     }
 }
 
-function validation_modificationMail($mail){
-    if(bdModifMailUser($_SESSION['profil']['login'], $mail)){
+function validation_modificationMail($mail)
+{
+    if (bdModifMailUser($_SESSION['profil']['login'], $mail)) {
         ajouterMessageAlerte("Le mail est modifié.", "vert");
-    } else{
+    } else {
         ajouterMessageAlerte("Aucune modification effectuée.", "rouge");
     }
     header('location:' . URL . "compte/profil");
+}
+
+function validation_modificationMDP($oldPassword, $newPassword, $verifNewPassword)
+{
+    if ($newPassword === $verifNewPassword) {
+        if (isCombinaisonValide($_SESSION['profil']['login'], $oldPassword)) {
+            $mdpCrypte = password_hash($newPassword, PASSWORD_DEFAULT);
+            if (bdModifMDP($_SESSION['profil']['login'], $mdpCrypte)) {
+                ajouterMessageAlerte("Mot de passe modifié !", "vert");
+                header('location:' . URL . "compte/profil");
+            } else {
+                ajouterMessageAlerte("La modification a échoué.", "rouge");
+                header('location:' . URL . "compte/profil");
+            }
+        } else {
+            ajouterMessageAlerte("La combinaison nom / ancien mot de passe n'est pas valide.", "rouge");
+            header('location:' . URL . "compte/profil");
+        }
+    } else {
+        ajouterMessageAlerte("Merci de bien vérifier votre nouveau mot de passe.", "rouge");
+        header('location:' . URL . "compte/profil");
+    }
+}
+
+function validation_suppressionCompte(){
+    if(bdSuppCompte($_SESSION['profil']['login'])){
+        deconnexion();
+        ajouterMessageAlerte("Suppression du compte effectuée.", "vert");
+        header('location:' . URL . "accueil");
+    } else{
+        ajouterMessageAlerte("La suppression du compte a échoué.<br>Contacter l'administrateur.", "rouge");
+        header('location:' . URL . "compte/profil");
+    }
 }

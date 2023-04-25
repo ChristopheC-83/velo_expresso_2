@@ -22,7 +22,7 @@ $backgroundSection: rgb(231, 82, 231);
         }
     }
     button, .buttonEntryForm{
-        height: 40px;
+        min-height: 40px;
         border-radius: 5px;
         margin: 50px 0;
         font-size: 20px;

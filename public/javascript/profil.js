@@ -5,6 +5,8 @@ const divModifMail = document.getElementById("modif_mail");
 btnModifMail.addEventListener("click", () => {
   if (divModifMail.classList.contains("dnone")) {
     divModifMail.classList.remove("dnone");
+    divModifMdp.classList.add("dnone");
+    divSuppressionCompte.classList.add("dnone");
   } else {
     divModifMail.classList.add("dnone");
   }
@@ -17,6 +19,8 @@ const divModifMdp = document.getElementById("modif_mdp");
 btnModifMdp.addEventListener("click", () => {
   if (divModifMdp.classList.contains("dnone")) {
     divModifMdp.classList.remove("dnone");
+    divModifMail.classList.add("dnone");
+    divSuppressionCompte.classList.add("dnone");
   } else {
     divModifMdp.classList.add("dnone");
   }
@@ -50,3 +54,17 @@ function verificationPassword() {
     }
   }
 }
+
+// suppression compte
+const btnSuppCompte = document.getElementById("btn_suppression_compte");
+const divSuppressionCompte = document.getElementById("suppression_compte");
+
+btnSuppCompte.addEventListener("click", () => {
+  if (divSuppressionCompte.classList.contains("dnone")) {
+    divSuppressionCompte.classList.remove("dnone");
+    divModifMdp.classList.add("dnone");
+    divModifMail.classList.add("dnone");
+  } else {
+    divSuppressionCompte.classList.add("dnone");
+  }
+});

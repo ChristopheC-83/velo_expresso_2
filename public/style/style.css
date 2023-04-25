@@ -19,7 +19,7 @@
   box-shadow: 3px 3px 6px violet;
 }
 .entryForm button, .entryForm .buttonEntryForm {
-  height: 40px;
+  min-height: 40px;
   border-radius: 5px;
   margin: 50px 0;
   font-size: 20px;
@@ -250,6 +250,23 @@ footer {
 }
 .profilContainer .btn_info:before {
   display: none;
+}
+.profilContainer #btn_suppression_compte {
+  cursor: pointer;
+}
+.profilContainer .btn_suppression {
+  background-color: rgb(245, 75, 75);
+  box-shadow: 0px 0px 0px red;
+}
+.profilContainer .btn_suppression:after {
+  display: none;
+}
+.profilContainer .btn_suppression:before {
+  display: none;
+}
+.profilContainer .btn_suppression:hover {
+  box-shadow: 0px 0px 0px red;
+  color: black;
 }
 
 body {

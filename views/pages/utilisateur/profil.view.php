@@ -8,18 +8,7 @@
     <br>
     <p>Mail : <?= $utilisateur['mail'] ?> <i class="fa-solid fa-square-pen" id="btn_modif_mail"></i></p>
     <br>
-    <div id="modif_mail" class="dnone">
-        <br>
-        <form action="<?= URL ?>compte/validation_modificationMail" method="post" class="form_entry_form">
-            <div class="entryForm">
-                <input type="mail" id="mail" name="mail" placeholder="Nouveau Mail">
-            </div>
-            <div class="entryForm">
-                <button id="btn_validation_modif_mail">Valider nouveau mail</button>
-            </div>
-        </form>
 
-    </div>
 
     <p>Statut : <?= $utilisateur['role'] ?></p>
     <br>
@@ -32,7 +21,29 @@
     </p>
     <br>
     <p>Modifier le mot de passe <i class="fa-solid fa-square-pen" id="btn_modif_mdp"></i></p>
-    <div id="modif_mdp" class="">
+    <br>
+    <p >Supprimer mon compte <span id="btn_suppression_compte">❌</span></p>
+
+    <div id="suppression_compte" class="dnone">
+        <a href="<?=URL?>compte/suppressionCompte">
+            <div class="entryForm">
+                <button id="btn_validation_suppression_compte" class="btn_suppression">Valider la suppression irréversible<br> de mon compte.</button>
+            </div>
+        </a>
+    </div>
+    <div id="modif_mail" class="dnone">
+        <br>
+        <form action="<?= URL ?>compte/validation_modificationMail" method="post" class="form_entry_form">
+            <div class="entryForm">
+                <input type="mail" id="mail" name="mail" placeholder="Nouveau Mail">
+            </div>
+            <div class="entryForm">
+                <button id="btn_validation_modif_mail">Valider nouveau mail</button>
+            </div>
+        </form>
+
+    </div>
+    <div id="modif_mdp" class="dnone">
         <br>
         <form action="<?= URL ?>compte/validation_modificationMDP" method="post" class="form_entry_form">
             <div class="entryForm">
@@ -44,7 +55,7 @@
             <div class="entryForm">
                 <input type="password" id="verifNewPassword" name="verifNewPassword" placeholder="Confirmation nouveau mot de passe">
             </div>
-            
+
             <div class="entryForm">
                 <button id="msg_psw_diff" class="btn_info dnone">Les 2 mots de passe ne correspondent pas !</button>
             </div>

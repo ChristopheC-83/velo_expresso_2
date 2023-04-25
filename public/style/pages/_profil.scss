@@ -28,4 +28,23 @@
       display: none;
     }
   }
+
+  #btn_suppression_compte {
+    cursor: pointer;
+  }
+
+  .btn_suppression {
+    background-color: rgb(245, 75, 75);
+    box-shadow: 0px 0px 0px red;
+    &:after {
+      display: none;
+    }
+    &:before {
+      display: none;
+    }
+    &:hover {
+      box-shadow: 0px 0px 0px red;
+      color: black;
+    }
+  }
 }

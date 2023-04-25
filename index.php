@@ -73,7 +73,18 @@ try {
                         validation_modificationMail(secureHTML($_POST['mail']));
                         break;
                     case "validation_modificationMDP":
-                        validation_modificationMDP(secureHTML($_POST['login']));
+                        if (!empty($_POST['oldPassword']) && !empty($_POST['newPassword']) && !empty($_POST['verifNewPassword'])) {
+                            $oldPassword = secureHTML($_POST['oldPassword']);
+                            $newPassword = secureHTML($_POST['newPassword']);
+                            $verifNewPassword = secureHTML($_POST['verifNewPassword']);
+                            validation_modificationMDP($oldPassword, $newPassword, $verifNewPassword);
+                        } else {
+                            ajouterMessageAlerte("Il faut remplir les 3 champs", "rouge");
+                            header('location:' . URL . "compte/profil");
+                        }
+                        break;
+                    case "suppressionCompte":
+                        validation_suppressionCompte();
                         break;
                     default:
                         throw new Exception("La page demandée n'existe pas.");
