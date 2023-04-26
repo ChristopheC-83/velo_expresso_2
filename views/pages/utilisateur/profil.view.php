@@ -3,6 +3,15 @@
     <h1><?= $utilisateur['login'] ?> : votre profil</h1>
     <h2>Profil et modifications</h2>
 
+    <div class="imgProfil">
+        <img src="<?=URL?>/public/assets/images/<?=$utilisateur['image']?>" alt="photo de profil">
+        <form action="<?=URL?>compte/validation/modifImage" enctype="multipart/form-data" method="post">
+            <label for="image">Changer votre image de profil</label><br>
+            <input type="file" id="image" name="image" onchange="submit()">
+
+        </form>
+    </div>
+
 
     <p>Nom : <?= $utilisateur['login'] ?></p>
     <br>
