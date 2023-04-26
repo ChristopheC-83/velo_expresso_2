@@ -12,10 +12,7 @@ function validation_modifImage($file)
     try {
         $repertoire = "public/assets/images/profils/" . $_SESSION['profil']['login'] . "/";
         $nomImage = ajoutImage($file, $repertoire);
-        $ancienne_image = getImageUser($_SESSION['profil']['login']);
-        if ($ancienne_image !== image_init) {
-            unlink("public/assets/images/" . $ancienne_image);
-        }
+        suppressionImageUtilisateur($_SESSION['profil']['login']);
         $nomImageBd = "profils/" . $_SESSION['profil']['login'] . "/" . $nomImage;
         if (bdAjoutImage($_SESSION['profil']['login'], $nomImageBd)) {
             ajouterMessageAlerte("Modfication de l'image effectuée.", "vert");
@@ -54,4 +51,11 @@ function ajoutImage($file, $repertoire)
     if (!move_uploaded_file($file['tmp_name'], $target_file))
         throw new Exception("l'ajout de l'image n'a pas fonctionné");
     else return ($random . "_" . $file['name']);
+}
+
+function suppressionImageUtilisateur($login){
+    $ancienne_image = getImageUser($login);
+    if ($ancienne_image !== image_init) {
+        unlink("public/assets/images/" . $ancienne_image);
+    }
 }

@@ -5,6 +5,7 @@ require_once("./controllers/functionController.controller.php");
 require_once("./models/visiteur/visiteur.model.php");
 require_once("./models/utilisateur/utilisateur.model.php");
 require_once("./controllers/functionController.controller.php");
+require_once("./controllers/images.controller.php");
 
 function validation_login($login, $password)
 {
@@ -56,7 +57,7 @@ function validation_creerCompte($login, $password, $mail)
     if (verifLoginDispo($login)) {
         $passwordCrypte = password_hash($password, PASSWORD_DEFAULT);
         $cle = rand(0, 999999);
-        if (bdCreerCompte($login, $passwordCrypte, $mail, $cle, "profils/profil_init.jpg")) {
+        if (bdCreerCompte($login, $passwordCrypte, $mail, $cle, "profils/profil_init.jpg", "utilisateur")) {
             sendMailValidation($login, $mail, $cle);
             ajouterMessageAlerte("Votre compte a été créer. <br> Merci de la valider via le lien envoyé sur votre adresse mail.", "vert");
             header('location:' . URL . "accueil");
@@ -132,6 +133,9 @@ function validation_modificationMDP($oldPassword, $newPassword, $verifNewPasswor
 }
 
 function validation_suppressionCompte(){
+    suppressionImageUtilisateur($_SESSION['profil']['login']);
+    rmdir("public/assets/images/profils/".$_SESSION['profil']['login']);
+
     if(bdSuppCompte($_SESSION['profil']['login'])){
         deconnexion();
         ajouterMessageAlerte("Suppression du compte effectuée.", "vert");

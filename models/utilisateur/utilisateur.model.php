@@ -51,16 +51,17 @@ function verifLoginDispo($login)
     return empty($utilisateur);
 }
 
-function bdCreerCompte($login, $passwordCrypte, $mail, $cle, $image)
+function bdCreerCompte($login, $passwordCrypte, $mail, $cle, $image, $role)
 {
     $req = "INSERT INTO user_management (login, password, mail, est_valide, role, cle, image)
-            VALUES(:login, :password, :mail, 0, 'utilisateur', :cle, :image)";
+            VALUES(:login, :password, :mail, 0, :role, :cle, :image)";
     $stmt = getBDD()->prepare($req);
     $stmt->bindValue(":login", $login, PDO::PARAM_STR);
     $stmt->bindValue(":password", $passwordCrypte, PDO::PARAM_STR);
     $stmt->bindValue(":mail", $mail, PDO::PARAM_STR);
     $stmt->bindValue(":cle", $cle, PDO::PARAM_INT);
     $stmt->bindValue(":image", $image, PDO::PARAM_STR);
+    $stmt->bindValue(":role", $role, PDO::PARAM_STR);
     $stmt->execute();
     $creationOK = ($stmt->rowCount() > 0);
     $stmt->closeCursor();
