@@ -5,7 +5,7 @@
 
     <div class="imgProfil">
         <img src="<?=URL?>/public/assets/images/<?=$utilisateur['image']?>" alt="photo de profil">
-        <form action="<?=URL?>compte/validation/modifImage" enctype="multipart/form-data" method="post">
+        <form action="<?=URL?>compte/validation_modifImage" enctype="multipart/form-data" method="post">
             <label for="image">Changer votre image de profil</label><br>
             <input type="file" id="image" name="image" onchange="submit()">
 

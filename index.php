@@ -9,6 +9,7 @@ require_once("./controllers/visiteur/visiteur.controller.php");
 require_once("./controllers/utilisateur/utilisateur.controller.php");
 require_once("./controllers/functionController.controller.php");
 require_once("./controllers/security.controller.php");
+require_once("./controllers/images.controller.php");
 
 try {
     if (empty($_GET['page'])) {
@@ -68,6 +69,17 @@ try {
                         break;
                     case "deconnexion":
                         deconnexion();
+                        break;
+                    case "validation_modifImage":
+                        // afficherTableau($_FILES['image']);
+                        // afficherTableau($_SESSION);
+                        if ($_FILES['image']['size'] > 0) {
+                            validation_modifImage($_FILES['image']);
+                        } else {
+                            ajouterMessageAlerte("Image non modifiée", "rouge");
+                            header('location:' . URL . "profil");
+                        }
+                        // validation_modifImage(secureHTML($_POST['mail']));
                         break;
                     case "validation_modificationMail":
                         validation_modificationMail(secureHTML($_POST['mail']));
