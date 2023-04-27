@@ -23,7 +23,7 @@
                     Validé
                     <?php else : ?>
 
-                    <form action="<?= URL ?>administration/validation_modificationValidation" method="post"
+                    <form action="<?= URL ?>admin/validation_modificationValidation" method="post"
                         class="formulaireAdminCompte">
                         <input type="hidden" name="login" value="<?= $utilisateur['login'] ?>" />
                         <select name="est_valide" onchange="confirmation(this.form)">
@@ -40,8 +40,9 @@
                     <?php if ($utilisateur['role'] === "administrateur") : ?>
                     <?= $utilisateur['role'] ?>
                     <?php else : ?>
-                    <form action="<?= URL ?>administration/validation_modificationRole" method="post"
+                    <form action="<?= URL ?>admin/validation_modificationRole" method="post"
                         class="formulaireAdminRole">
+                        <!-- input hidden pour recupérer le nom de l'utilisateur dont on change un parametre (role...) -->
                         <input type="hidden" name="login" value="<?= $utilisateur['login'] ?>" />
                         <select name="role" onchange="confirmation(this.form)">
                             <option value="utilisateur" <?= $utilisateur['role'] === "utilisateur" ? "selected" : "" ?>>

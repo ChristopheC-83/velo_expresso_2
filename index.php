@@ -117,6 +117,12 @@ try {
                     case "gestion_droits":
                         droits();
                         break;
+                    case "validation_modificationValidation":
+                        validation_modificationValidation($_POST['login'], $_POST['est_valide']);
+                        break;
+                    case "validation_modificationRole":
+                        validation_modificationRole($_POST['login'], $_POST['role']);
+                        break;
 
                     default:
                         throw new Exception("La page demandée n'existe pas.");
