@@ -62,3 +62,17 @@ function creerCompte()
     ];
     genererPage($data_page);
 }
+
+function mdpOublie()
+{
+
+    $data_page = [
+        "page_description" => "Page de récupération d'un mot de passe",
+        "page_title" => "un oubli ?",
+        "view" => "views/pages/visiteur/mdpOublie.view.php",
+        "template" => "views/commons/template.php",
+        "css" => "loginContainer",
+
+    ];
+    genererPage($data_page);
+}

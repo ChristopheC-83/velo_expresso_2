@@ -58,6 +58,20 @@ try {
         case "validationMail":
             validation_mailCompte($url[1], $url[2]);
             break;
+        case "mdpOublie":
+            mdpOublie();
+            break;
+        case "envoi_mdpOublie":
+            if (!empty($_POST['loginMdpOublie']) && !empty($_POST['mailMdpOublie'])) {
+                $login = secureHTML($_POST['loginMdpOublie']);
+                $password = secureHTML($_POST['mailMdpOublie']);
+                validation_mdpOublie($login, $password);
+            } else {
+                ajouterMessageAlerte('Login ou mail non renseigné.', 'rouge');
+                header('location:' . URL . "mdpOublie");
+                exit;
+            }
+            break;
 
          
         case "compte":

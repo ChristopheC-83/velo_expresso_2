@@ -225,6 +225,13 @@ footer {
   background-color: #fff;
 }
 
+.loginContainer a {
+  color: #f1f1f1;
+  text-decoration: underline;
+  display: block;
+  text-align: center;
+}
+
 .profilContainer i {
   cursor: pointer;
 }

@@ -147,3 +147,29 @@ function validation_suppressionCompte(){
         header('location:' . URL . "compte/profil");
     }
 }
+
+function validation_mdpOublie($login, $mail){
+    if(!isCombinaisonMailOublieValide($login, $mail)){
+        ajouterMessageAlerte("Merci de vérifier", "rouge");
+    }else{
+        $destinataire= $mail;
+        $sujet= "on a oublié son mdp ?";
+        $message="on va résoudre ça !";
+        ajouterMessageAlerte("Un nouveau mdp envoyé par mail", "vert");
+        sendMail($destinataire, $sujet, $message, );
+    }
+    header('location:' . URL . "mdpOublie");
+}
+
+function isCombinaisonMailOublieValide($login, $mail)
+{
+    $maildBd = getMailUser($login);
+    if ($maildBd===$mail){
+        ajouterMessageAlerte("Bon mail", "vert");
+        return true;
+    }else{
+        ajouterMessageAlerte("mauvais mail", "rouge");
+        return false;
+    }
+   
+}

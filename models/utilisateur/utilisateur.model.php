@@ -14,6 +14,16 @@ function getPasswordUser($login)
     $stmt->closeCursor();
     return $resultat['password'];
 }
+function getMailUser($login)
+{
+    $req = "SELECT mail FROM user_management WHERE login = :login";
+    $stmt = getBDD()->prepare($req);
+    $stmt->bindValue(":login", $login, PDO::PARAM_STR);
+    $stmt->execute();
+    $resultat = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $resultat['mail'];
+}
 
 function isCombinaisonValide($login, $password)
 {
@@ -22,6 +32,7 @@ function isCombinaisonValide($login, $password)
     // afficherTableau($passwordBd);
     return password_verify($password, $passwordBd);
 }
+
 
 function compteActif($login)
 {

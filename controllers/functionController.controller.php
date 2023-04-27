@@ -28,7 +28,7 @@ function ajouterMessageAlerte($message, $type)
 
 function sendMail($destinataire, $sujet, $message)
 {
-    $headers = "From : Kiki de la casa";
+    $headers = "From: Kiki de la casa <christophe.chiappetta@gmail.com>";
     if (mail($destinataire, $sujet, $message, $headers)) {
         ajouterMessageAlerte("Mail envoyé ! <br> Allez regarder votre boîtes !", "vert");
     } else {

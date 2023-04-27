@@ -19,8 +19,10 @@
             <!-- sinon : -->
             <button>Connexion</button>
         </div>
-
+        
+        
     </form>
+    <a href="<?=URL?>mdpOublie">mot de passe oublié</a>
 
 
 
