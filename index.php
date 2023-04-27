@@ -6,6 +6,7 @@ define("URL", str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https"  
     $_SERVER["PHP_SELF"]));
 
 require_once("./controllers/visiteur/visiteur.controller.php");
+require_once("./controllers/administrateur/administrateur.controller.php");
 require_once("./controllers/utilisateur/utilisateur.controller.php");
 require_once("./controllers/functionController.controller.php");
 require_once("./controllers/security.controller.php");
@@ -102,6 +103,26 @@ try {
                         throw new Exception("La page demandée n'existe pas.");
                 }
             }
+            break;
+        case "admin":
+            if (!estConnecte()) {
+                ajouterMessageAlerte("Vous devez vous connecter.", "rouge");
+                session_unset();
+                header('location:' . URL . "login");
+            } elseif (!estAdministrateur()) {
+                ajouterMessageAlerte("Zone réservée aux administrateurs.", "rouge");
+                header('location:' . URL . "accueil");
+            } else {
+                switch ($url[1]) {
+                    case "gestion_droits":
+                        droits();
+                        break;
+
+                    default:
+                        throw new Exception("La page demandée n'existe pas.");
+                }
+            }
+
             break;
         default:
             throw new Exception("La page demandée n'existe pas.");
