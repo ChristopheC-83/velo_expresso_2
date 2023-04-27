@@ -17,3 +17,18 @@ function estAdministrateur()
 {
     return (!empty($_SESSION['profil']['role'] === "administrateur"));
 }
+
+define("COOKIE_NAME", "timer");
+
+function genererCookieConnexion(){
+    $ticket  = session_id().microtime().rand(0,999999);
+    $ticket = hash("sha512", $ticket);
+    //le cookie expire dans timeExp secondes
+    $timeExp = 60*20;
+    setcookie(COOKIE_NAME, $ticket, time()+$timeExp);
+    $_SESSION['profil'][COOKIE_NAME] = $ticket;
+}
+
+function checkCookieConnexion(){
+    return $_COOKIE[COOKIE_NAME] === $_SESSION['profil'][COOKIE_NAME];
+}

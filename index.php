@@ -58,12 +58,21 @@ try {
         case "validationMail":
             validation_mailCompte($url[1], $url[2]);
             break;
+
+         
         case "compte":
             if (!estConnecte()) {
                 header('location:' . URL . "accueil");
                 session_unset();
                 ajouterMessageAlerte("Vous devez vous connecter ou vous inscrire.", "orange");
-            } else {
+            } elseif(!checkCookieConnexion()){
+                header('location:' . URL . "login");
+                unset($_SESSION['profil']);
+                setcookie(COOKIE_NAME, "", time()-3600);
+                ajouterMessageAlerte("Session expirée ! Veuillez vous reconnecter.", "orange");
+            }
+            else {
+                genererCookieConnexion(); //pour ne pas avoir à se reconnecter en permanence si on est actif sur le site.
                 switch ($url[1]) {
                     case "profil":
                         profil();

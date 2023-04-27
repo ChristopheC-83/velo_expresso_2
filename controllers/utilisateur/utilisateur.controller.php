@@ -15,6 +15,7 @@ function validation_login($login, $password)
             $_SESSION['profil'] = [
                 "login" => $login,
             ];
+            genererCookieConnexion();
             header('location:' . URL . "compte/profil");
         } else {
             $msg = "Le compte de " . $login . " n'a pas été activé. <br> Contrôlez vos mails ! <br> <a href='renvoyerMailValidation/" . $login . "'>Renvoyer le mail de validation</a>";
@@ -47,9 +48,10 @@ function profil()
 
 function deconnexion()
 {
-    ajouterMessageAlerte("Vous êtes bien déconnecté.", "vert");
     session_unset();
+    setcookie(COOKIE_NAME, "", time()-3600);
     header('location:' . URL . "accueil");
+    ajouterMessageAlerte("Vous êtes bien déconnecté.", "vert");
 }
 
 function validation_creerCompte($login, $password, $mail)
