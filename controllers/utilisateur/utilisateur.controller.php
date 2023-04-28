@@ -152,9 +152,11 @@ function validation_mdpOublie($login, $mail){
     if(!isCombinaisonMailOublieValide($login, $mail)){
         ajouterMessageAlerte("Merci de vérifier", "rouge");
     }else{
+        $newMdp = generateRandomPassword(20);
+        bdChangementMdpOublie($login,$newMdp);
         $destinataire= $mail;
         $sujet= "on a oublié son mdp ?";
-        $message="on va résoudre ça !";
+        $message="on va résoudre ça ! \r\nEssaye avec : \r\n \r\n".$newMdp." \r\n \r\nChange le sur le site... lui tu ne risque pas de le retenir !" ;
         ajouterMessageAlerte("Un nouveau mdp envoyé par mail", "vert");
         sendMail($destinataire, $sujet, $message, );
     }
@@ -172,4 +174,13 @@ function isCombinaisonMailOublieValide($login, $mail)
         return false;
     }
    
+}
+
+function bdChangementMdpOublie($login,$newMdp ){
+    $mdpCrypte = password_hash($newMdp, PASSWORD_DEFAULT);
+    if(bdModifMDP($login, $mdpCrypte)){
+        ajouterMessageAlerte("Mot de passe provisoire actif", "vert");
+    } else{
+        ajouterMessageAlerte("Echec de la mise en place du nouveau mot de passe", "rouge");
+    }
 }

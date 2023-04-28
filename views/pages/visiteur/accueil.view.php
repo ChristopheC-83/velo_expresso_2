@@ -10,6 +10,9 @@
     } else {
         echo "Session vide !";
     }
+    echo "<br>";
+
+    echo(generateRandomPassword(30))
 
 
     ?>
