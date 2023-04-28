@@ -12,3 +12,10 @@ function confirmation(formulaire) {
       document.location.reload();
     }
   }
+function confirmationSupp(formulaire) {
+    if (confirm("Confirmez-vous la modification ?")) {
+      formulaire.submit();
+    } else {
+      document.location.reload();
+    }
+  }

@@ -73,19 +73,18 @@ try {
             }
             break;
 
-         
+
         case "compte":
             if (!estConnecte()) {
                 header('location:' . URL . "accueil");
                 session_unset();
                 ajouterMessageAlerte("Vous devez vous connecter ou vous inscrire.", "orange");
-            } elseif(!checkCookieConnexion()){
+            } elseif (!checkCookieConnexion()) {
                 header('location:' . URL . "login");
                 unset($_SESSION['profil']);
-                setcookie(COOKIE_NAME, "", time()-3600);
+                setcookie(COOKIE_NAME, "", time() - 3600);
                 ajouterMessageAlerte("Session expirée ! Veuillez vous reconnecter.", "orange");
-            }
-            else {
+            } else {
                 genererCookieConnexion(); //pour ne pas avoir à se reconnecter en permanence si on est actif sur le site.
                 switch ($url[1]) {
                     case "profil":
@@ -145,6 +144,9 @@ try {
                         break;
                     case "validation_modificationRole":
                         validation_modificationRole($_POST['login'], $_POST['role']);
+                        break;
+                    case "pageAdminSuppressionCompte":
+                        adminSuppressionCompte($_POST['login']);
                         break;
 
                     default:

@@ -41,3 +41,17 @@ function validation_modificationValidation($login, $est_valide)
     }
     header('location:' . URL . "admin/gestion_droits");
 }
+
+function adminSuppressionCompte($login){
+    
+    suppressionImageUtilisateur($login);
+    rmdir("public/assets/images/profils/".$login);
+
+    if(bdSuppCompte($login)){
+        ajouterMessageAlerte("Suppression du compte effectuée.", "vert");
+        header('location:' . URL . "admin/gestion_droits");
+    } else{
+        ajouterMessageAlerte("La suppression du compte a échoué.<br>Contacter l'administrateur.", "rouge");
+        header('location:' . URL . "admin/gestion_droits");
+    }
+}
