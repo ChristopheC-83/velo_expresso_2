@@ -23,20 +23,21 @@
     <br>
     <p>Compte :
         <?php if ($utilisateur['est_valide'] === 1) : ?>
-            validé
+        validé
         <?php else : ?>
-            en attente de validation
+        en attente de validation
         <?php endif ?>
     </p>
     <br>
     <p>Modifier le mot de passe <i class="fa-solid fa-square-pen" id="btn_modif_mdp"></i></p>
     <br>
-    <p >Supprimer mon compte <span id="btn_suppression_compte">❌</span></p>
+    <p>Supprimer mon compte <span id="btn_suppression_compte">❌</span></p>
 
     <div id="suppression_compte" class="dnone">
         <a href="<?=URL?>compte/suppressionCompte">
             <div class="entryForm">
-                <button id="btn_validation_suppression_compte" class="btn_suppression">Valider la suppression irréversible<br> de mon compte.</button>
+                <button id="btn_validation_suppression_compte" class="btn_suppression">Valider la suppression
+                    irréversible<br> de mon compte.</button>
             </div>
         </a>
     </div>
@@ -56,13 +57,22 @@
         <br>
         <form action="<?= URL ?>compte/validation_modificationMDP" method="post" class="form_entry_form">
             <div class="entryForm">
-                <input type="password" id="oldPassword" name="oldPassword" placeholder="Ancien Mot de passe">
+                <div class="afficherMDP">
+                    <input type="password" id="oldPassword" name="oldPassword" placeholder="Ancien Mot de passe">
+                    <i
+                        class="fa-regular fa-eye-slash"></i><i class="fa-regular fa-eye dnone"></i>
+                </div>
             </div>
             <div class="entryForm formPsw">
-                <input type="password" id="newPassword" name="newPassword" placeholder="Nouveau mot de passe">
+                <div class="afficherMDP">
+                    <input type="password" id="newPassword" name="newPassword" placeholder="Nouveau mot de passe"><i
+                        class="fa-regular fa-eye-slash"></i><i class="fa-regular fa-eye dnone"></i>
+                </div>
             </div>
             <div class="entryForm">
-                <input type="password" id="verifNewPassword" name="verifNewPassword" placeholder="Confirmation nouveau mot de passe">
+                <div class="afficherMDP"><input type="password" id="verifNewPassword" name="verifNewPassword"
+                        placeholder="Confirmation nouveau mot de passe"><i class="fa-regular fa-eye-slash"></i><i
+                        class="fa-regular fa-eye dnone"></i></div>
             </div>
 
             <div class="entryForm">

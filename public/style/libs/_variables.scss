@@ -1,89 +1,100 @@
 $backgroungColor: rgb(40, 40, 40);
 $backgroundSection: rgb(231, 82, 231);
 
-.entryForm{
+.entryForm {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  width: 50%;
+  margin: 0 auto;
+  label {
+    margin: 15px 0;
+  }
+  input {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 18px;
+    outline-color: violet;
+
+    &:focus {
+      box-shadow: 3px 3px 6px violet;
+    }
+  }
+  .afficherMDP {
     display: flex;
-    flex-direction: column;
-    font-size: 20px;
-    width: 50%;
-    margin: 0 auto;
-    label{
-        margin: 15px 0;
-    }
+    align-items: center;
     input{
-        width: 100%;
-        height: 40px;
-        border-radius: 5px;
-        font-size: 18px;
-        outline-color: violet;
-        
-        &:focus{
-            box-shadow: 3px 3px 6px violet;
-        }
+        margin-right: 20px;
     }
-    button, .buttonEntryForm{
-        min-height: 40px;
-        border-radius: 5px;
-        margin: 50px 0;
-        font-size: 20px;
-        box-shadow: 0px 0px 2px 2px violet;
-        transition: all 1.5s;
-        position: relative;
-        cursor: pointer;
-        &:before{
-            content:"";
-            position: absolute;
-            display: inline-block;
-            height: 100%;
-            width: 0px;
-            background-color:rgb(116, 4, 116);
-            // border-top-right-radius: 8px;
-            // border-bottom-right-radius: 8px;
-            z-index: -1;
-            top: 0;
-            left: 0;
-            transition: all 1s;
-        }
-        &:after{
-            content:"";
-            position: absolute;
-            display: inline-block;
-            height: 100%;
-            width: 0px;
-            background-color:rgb(116, 4, 116);
-            // border-top-left-radius: 8px;
-            // border-bottom-left-radius: 8px;
-            z-index: -1;
-            top: 0;
-            right: 0;
-            transition: all 1s;
-        }
-        &:hover{
-            box-shadow: 0px 0px 10px 10px violet;
-            color : #f1f1f1;
-            z-index: 2;
-
-            &:before{
-                width: 50%;
-            }
-            &:after{
-                width: 50%;
-            }
-        }
-    }
-}
-
-.bouton_inactif{
-    pointer-events: none;
-    opacity: 0.5;
-    &:after{
+    .dnone{
         display: none;
     }
-    &:before{
-        display: none;
+  }
+  button,
+  .buttonEntryForm {
+    min-height: 40px;
+    border-radius: 5px;
+    margin: 50px 0;
+    font-size: 20px;
+    box-shadow: 0px 0px 2px 2px violet;
+    transition: all 1.5s;
+    position: relative;
+    cursor: pointer;
+    &:before {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      height: 100%;
+      width: 0px;
+      background-color: rgb(116, 4, 116);
+      // border-top-right-radius: 8px;
+      // border-bottom-right-radius: 8px;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      transition: all 1s;
     }
+    &:after {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      height: 100%;
+      width: 0px;
+      background-color: rgb(116, 4, 116);
+      // border-top-left-radius: 8px;
+      // border-bottom-left-radius: 8px;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      transition: all 1s;
+    }
+    &:hover {
+      box-shadow: 0px 0px 10px 10px violet;
+      color: #f1f1f1;
+      z-index: 2;
+
+      &:before {
+        width: 50%;
+      }
+      &:after {
+        width: 50%;
+      }
+    }
+  }
 }
 
-.dnone{
+.bouton_inactif {
+  pointer-events: none;
+  opacity: 0.5;
+  &:after {
     display: none;
+  }
+  &:before {
+    display: none;
+  }
+}
+
+.dnone {
+  display: none;
 }

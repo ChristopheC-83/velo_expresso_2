@@ -11,8 +11,10 @@
         echo "Session vide !";
     }
     echo "<br>";
-
-    echo(generateRandomPassword(30))
+    echo "<br>";
+    echo "un mot de passe aléatoire ?";
+    echo "<br>";
+    echo(generateRandomPassword(20))
 
 
     ?>

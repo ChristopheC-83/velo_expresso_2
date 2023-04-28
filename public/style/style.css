@@ -18,7 +18,18 @@
 .entryForm input:focus {
   box-shadow: 3px 3px 6px violet;
 }
-.entryForm button, .entryForm .buttonEntryForm {
+.entryForm .afficherMDP {
+  display: flex;
+  align-items: center;
+}
+.entryForm .afficherMDP input {
+  margin-right: 20px;
+}
+.entryForm .afficherMDP .dnone {
+  display: none;
+}
+.entryForm button,
+.entryForm .buttonEntryForm {
   min-height: 40px;
   border-radius: 5px;
   margin: 50px 0;
@@ -28,7 +39,8 @@
   position: relative;
   cursor: pointer;
 }
-.entryForm button:before, .entryForm .buttonEntryForm:before {
+.entryForm button:before,
+.entryForm .buttonEntryForm:before {
   content: "";
   position: absolute;
   display: inline-block;
@@ -40,7 +52,8 @@
   left: 0;
   transition: all 1s;
 }
-.entryForm button:after, .entryForm .buttonEntryForm:after {
+.entryForm button:after,
+.entryForm .buttonEntryForm:after {
   content: "";
   position: absolute;
   display: inline-block;
@@ -52,15 +65,18 @@
   right: 0;
   transition: all 1s;
 }
-.entryForm button:hover, .entryForm .buttonEntryForm:hover {
+.entryForm button:hover,
+.entryForm .buttonEntryForm:hover {
   box-shadow: 0px 0px 10px 10px violet;
   color: #f1f1f1;
   z-index: 2;
 }
-.entryForm button:hover:before, .entryForm .buttonEntryForm:hover:before {
+.entryForm button:hover:before,
+.entryForm .buttonEntryForm:hover:before {
   width: 50%;
 }
-.entryForm button:hover:after, .entryForm .buttonEntryForm:hover:after {
+.entryForm button:hover:after,
+.entryForm .buttonEntryForm:hover:after {
   width: 50%;
 }
 
