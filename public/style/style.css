@@ -28,6 +28,9 @@
 .entryForm .afficherMDP .dnone {
   display: none;
 }
+.entryForm .afficherMDP .fa-regular {
+  cursor: pointer;
+}
 .entryForm button,
 .entryForm .buttonEntryForm {
   min-height: 40px;

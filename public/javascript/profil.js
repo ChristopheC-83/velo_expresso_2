@@ -68,3 +68,26 @@ btnSuppCompte.addEventListener("click", () => {
     divSuppressionCompte.classList.add("dnone");
   }
 });
+
+// affichage mdp
+
+const mdpMasque = document.querySelector(".fa-eye-slash")
+const mdpVisible = document.querySelector(".fa-eye")
+const oldPassword = document.querySelector("#oldPassword")
+
+mdpMasque.addEventListener("click", ()=>{
+  mdpMasque.classList.add("dnone")
+  mdpVisible.classList.remove("dnone")
+  oldPassword.type="text"
+  newPassword.type="text"
+  verifNewPassword.type="text"
+
+})
+mdpVisible.addEventListener("click", ()=>{
+  mdpMasque.classList.remove("dnone")
+  mdpVisible.classList.add("dnone")
+  oldPassword.type="password"
+  newPassword.type="password"
+  verifNewPassword.type="password"
+
+})

@@ -24,11 +24,14 @@ $backgroundSection: rgb(231, 82, 231);
   .afficherMDP {
     display: flex;
     align-items: center;
-    input{
-        margin-right: 20px;
+    input {
+      margin-right: 20px;
     }
-    .dnone{
-        display: none;
+    .dnone {
+      display: none;
+    }
+    .fa-regular {
+      cursor: pointer;
     }
   }
   button,

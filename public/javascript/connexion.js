@@ -1,6 +1,7 @@
-const mdpMasque = document.querySelectorAll(".fa-eye-slash")
-const mdpVisible = document.querySelectorAll(".fa-eye")
+const mdpMasque = document.querySelector(".fa-eye-slash")
+const mdpVisible = document.querySelector(".fa-eye")
 const password = document.querySelector("#password")
+const passwordCreerCompte = document.querySelector(".passwordCreerCompte")
 
 
 

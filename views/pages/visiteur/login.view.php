@@ -10,7 +10,11 @@
         </div>
         <div class="entryForm">
             <label for="password">Password : </label>
-            <div class="afficherMDP"><input type="password" id="password" name="password"><i class="fa-regular fa-eye-slash"></i><i class="fa-regular fa-eye dnone"></i></div>
+            <div class="afficherMDP">
+                <input type="password" id="password" name="password">
+                <i class="fa-regular fa-eye-slash"></i>
+                <i class="fa-regular fa-eye dnone"></i>
+            </div>
         </div>
 
         <div class="entryForm">

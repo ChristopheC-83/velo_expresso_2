@@ -4,8 +4,8 @@
     <h2>Profil et modifications</h2>
 
     <div class="imgProfil">
-        <img src="<?=URL?>/public/assets/images/<?=$utilisateur['image']?>" alt="photo de profil">
-        <form action="<?=URL?>compte/validation_modifImage" enctype="multipart/form-data" method="post">
+        <img src="<?= URL ?>/public/assets/images/<?= $utilisateur['image'] ?>" alt="photo de profil">
+        <form action="<?= URL ?>compte/validation_modifImage" enctype="multipart/form-data" method="post">
             <label for="image">Changer votre image de profil</label><br>
             <input type="file" id="image" name="image" onchange="submit()">
 
@@ -23,9 +23,9 @@
     <br>
     <p>Compte :
         <?php if ($utilisateur['est_valide'] === 1) : ?>
-        validé
+            validé
         <?php else : ?>
-        en attente de validation
+            en attente de validation
         <?php endif ?>
     </p>
     <br>
@@ -34,7 +34,7 @@
     <p>Supprimer mon compte <span id="btn_suppression_compte">❌</span></p>
 
     <div id="suppression_compte" class="dnone">
-        <a href="<?=URL?>compte/suppressionCompte">
+        <a href="<?= URL ?>compte/suppressionCompte">
             <div class="entryForm">
                 <button id="btn_validation_suppression_compte" class="btn_suppression">Valider la suppression
                     irréversible<br> de mon compte.</button>
@@ -56,24 +56,20 @@
     <div id="modif_mdp" class="dnone">
         <br>
         <form action="<?= URL ?>compte/validation_modificationMDP" method="post" class="form_entry_form">
-            <div class="entryForm">
-                <div class="afficherMDP">
-                    <input type="password" id="oldPassword" name="oldPassword" placeholder="Ancien Mot de passe">
-                    <i
-                        class="fa-regular fa-eye-slash"></i><i class="fa-regular fa-eye dnone"></i>
-                </div>
+
+        <div class="entryForm">
+                <div class="afficherMDP" style="justify-content:center ; margin-bottom: 20px;">
+                    <i class="fa-regular fa-eye-slash"></i><i class="fa-regular fa-eye dnone"></i>
+                    </div>
+                <input type="password" id="oldPassword" name="oldPassword" placeholder="Ancien Mot de passe">
+
             </div>
             <div class="entryForm formPsw">
-                <div class="afficherMDP">
-                    <input type="password" id="newPassword" name="newPassword" placeholder="Nouveau mot de passe"><i
-                        class="fa-regular fa-eye-slash"></i><i class="fa-regular fa-eye dnone"></i>
-                </div>
+                <input type="password" id="newPassword" name="newPassword" placeholder="Nouveau mot de passe">
+
             </div>
-            <div class="entryForm">
-                <div class="afficherMDP"><input type="password" id="verifNewPassword" name="verifNewPassword"
-                        placeholder="Confirmation nouveau mot de passe"><i class="fa-regular fa-eye-slash"></i><i
-                        class="fa-regular fa-eye dnone"></i></div>
-            </div>
+            <div class="entryForm"><input type="password" id="verifNewPassword" name="verifNewPassword" placeholder="Confirmation nouveau mot de passe"></div>
+
 
             <div class="entryForm">
                 <button id="msg_psw_diff" class="btn_info dnone">Les 2 mots de passe ne correspondent pas !</button>

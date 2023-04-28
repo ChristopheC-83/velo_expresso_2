@@ -43,6 +43,7 @@ function pageLogin()
         "view" => "views/pages/visiteur/login.view.php",
         "template" => "views/commons/template.php",
         "css" => "loginContainer",
+        "js"=>["connexion.js"],
 
     ];
     genererPage($data_page);

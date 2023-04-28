@@ -10,25 +10,27 @@
         </div>
         <div class="entryForm">
             <label for="passwordCreation">Password : </label>
-            <input type="password" id="passwordCreation" name="password">
+            <div class="afficherMDP">
+                <input type="password" id="passwordCreation" name="password" class="passwordCreerCompte">
+                <i class="fa-regular fa-eye-slash"></i>
+                <i class="fa-regular fa-eye dnone"></i>
+            </div>
         </div>
         <!-- <div class="entryForm">
             <label for="password">Vérification Password : </label>
             <input type="password" id="verif_passwordCreation" name="password">
         </div> -->
         <div class="entryForm">
-            <label for="mail">Mail :  </label>
+            <label for="mail">Mail : </label>
             <input type="mail" id="mail" name="mail">
         </div>
 
-        <div class="entryForm" >
-            <button id="btnEnregistrement" >Enregistrer</button>
+        <div class="entryForm">
+            <button id="btnEnregistrement">Enregistrer</button>
         </div>
 
     </form>
 
-    <!-- créer une table personnaliser pour todo list -->
-    <!-- faire un bouton pour afficher mot de passe -->
 
 
 
