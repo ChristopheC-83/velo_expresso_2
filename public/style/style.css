@@ -307,6 +307,17 @@ footer {
   box-shadow: 0px 0px 0px red;
   color: black;
 }
+.profilContainer .images_site {
+  display: flex;
+  flex-wrap: wrap;
+}
+.profilContainer .images_site .image_site {
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+}
 
 .droitsContainer table {
   width: 80%;

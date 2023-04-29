@@ -6,11 +6,38 @@
     <div class="imgProfil">
         <img src="<?= URL ?>/public/assets/images/<?= $utilisateur['image'] ?>" alt="photo de profil">
         <form action="<?= URL ?>compte/validation_modifImage" enctype="multipart/form-data" method="post">
-            <label for="image">Changer votre image de profil</label><br>
-            <input type="file" id="image" name="image" onchange="submit()">
+            <label for="image">Changer votre image de profil par une image perso</label><br>
+            <input type="file" id="image" name="image" onchange="submit()" value="Parcourir">
+
+        </form>
+        <form action="<?= URL ?>compte/validation_modifImageSite" method="post">
+            <label for="image">Changer votre image de profil par une image du site</label><br>
+
 
         </form>
     </div>
+    <div class="images_site">
+        <?php
+        $dossier = "public/assets/images/profils/profils_site";
+        // Liste des fichiers dans le dossier
+        $fichiers = scandir($dossier);
+        ?>
+        <?php foreach ($fichiers  as $fichier) :
+            // Vérifie si le fichier est une image
+            if (in_array(pathinfo($fichier, PATHINFO_EXTENSION), array('jpg', 'jpeg', 'png', 'gif'))) :
+        ?>
+                <div class="image_site">
+                    <a href="comptechangerAvatar">
+                        <!-- on en est là ! -->
+                        <img src="<?= URL ?>/public/assets/images/profils/profils_site/<?= $fichier ?>">
+                    </a>
+                </div>
+            <?php endif; ?>
+        <?php endforeach ?>
+    </div>
+
+
+
 
 
     <p>Nom : <?= $utilisateur['login'] ?></p>
@@ -57,10 +84,10 @@
         <br>
         <form action="<?= URL ?>compte/validation_modificationMDP" method="post" class="form_entry_form">
 
-        <div class="entryForm">
+            <div class="entryForm">
                 <div class="afficherMDP" style="justify-content:center ; margin-bottom: 20px;">
                     <i class="fa-regular fa-eye-slash"></i><i class="fa-regular fa-eye dnone"></i>
-                    </div>
+                </div>
                 <input type="password" id="oldPassword" name="oldPassword" placeholder="Ancien Mot de passe">
 
             </div>

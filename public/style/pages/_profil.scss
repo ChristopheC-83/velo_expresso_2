@@ -60,4 +60,21 @@
       color: black;
     }
   }
+
+.images_site{
+  display: flex;
+  flex-wrap: wrap;
+  
+  .image_site{
+    margin: 10px;
+    width: 100px;
+    height : 100px;
+    border-radius: 50%;
+    overflow: hidden;
+
+  }
+}
+
+
+
 }

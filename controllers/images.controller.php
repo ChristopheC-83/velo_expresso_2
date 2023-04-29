@@ -14,7 +14,7 @@ function validation_modifImage($file)
         $nomImage = ajoutImage($file, $repertoire);
         suppressionImageUtilisateur($_SESSION['profil']['login']);
         $nomImageBd = "profils/" . $_SESSION['profil']['login'] . "/" . $nomImage;
-        if (bdAjoutImage($_SESSION['profil']['login'], $nomImageBd)) {
+        if (bdAjoutImage($_SESSION['profil']['login'], $nomImageBd, 0)) {
             ajouterMessageAlerte("Modfication de l'image effectuée.", "vert");
             header('location:' . URL . "compte/profil");
         } else {
@@ -53,9 +53,10 @@ function ajoutImage($file, $repertoire)
     else return ($random . "_" . $file['name']);
 }
 
-function suppressionImageUtilisateur($login){
-    $ancienne_image = getImageUser($login);
-    if ($ancienne_image !== image_init) {
+function suppressionImageUtilisateur($login)
+{
+    if (!getImgSiteUser($login)) {
+        $ancienne_image = getImageUser($login);
         unlink("public/assets/images/" . $ancienne_image);
     }
 }

@@ -3,14 +3,15 @@
 
 require_once("./models/pdo.model.php");
 
-function bdAjoutImage($login, $image)
+function bdAjoutImage($login, $image, $img_site)
 { {
-        $req = "UPDATE user_management set image = :image
+        $req = "UPDATE user_management set image = :image, img_site = :img_site
                 WHERE login = :login
                 ";
         $stmt = getBDD()->prepare($req);
         $stmt->bindValue(":login", $login, PDO::PARAM_STR);
         $stmt->bindValue(":image", $image, PDO::PARAM_STR);
+        $stmt->bindValue(":img_site", $img_site, PDO::PARAM_INT);
         $stmt->execute();
         $validationOk = ($stmt->rowCount() > 0);
         $stmt->closeCursor();

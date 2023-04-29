@@ -59,7 +59,8 @@ function validation_creerCompte($login, $password, $mail)
     if (verifLoginDispo($login)) {
         $passwordCrypte = password_hash($password, PASSWORD_DEFAULT);
         $cle = rand(0, 999999);
-        if (bdCreerCompte($login, $passwordCrypte, $mail, $cle, "profils/profil_init.jpg", "utilisateur")) {
+        $img_site = 1; // car on mettra une image du site par défaut en avatar
+        if (bdCreerCompte($login, $passwordCrypte, $mail, $cle, "profils/profils_site/profil_init.jpg",$img_site,  "utilisateur")) {
             sendMailValidation($login, $mail, $cle);
             ajouterMessageAlerte("Votre compte a été créer. <br> Merci de la valider via le lien envoyé sur votre adresse mail.", "vert");
             header('location:' . URL . "accueil");

@@ -85,24 +85,22 @@ try {
                 setcookie(COOKIE_NAME, "", time() - 3600);
                 ajouterMessageAlerte("Session expirée ! Veuillez vous reconnecter.", "orange");
             } else {
-                genererCookieConnexion(); //pour ne pas avoir à se reconnecter en permanence si on est actif sur le site.
                 switch ($url[1]) {
                     case "profil":
+                        //pour ne pas avoir à se reconnecter en permanence si on est actif sur le site.
+                        genererCookieConnexion(); 
                         profil();
                         break;
                     case "deconnexion":
                         deconnexion();
                         break;
                     case "validation_modifImage":
-                        // afficherTableau($_FILES['image']);
-                        // afficherTableau($_SESSION);
                         if ($_FILES['image']['size'] > 0) {
                             validation_modifImage($_FILES['image']);
                         } else {
                             ajouterMessageAlerte("Image non modifiée", "rouge");
                             header('location:' . URL . "profil");
                         }
-                        // validation_modifImage(secureHTML($_POST['mail']));
                         break;
                     case "validation_modificationMail":
                         validation_modificationMail(secureHTML($_POST['mail']));

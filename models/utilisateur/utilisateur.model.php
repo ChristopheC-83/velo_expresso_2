@@ -24,6 +24,16 @@ function getMailUser($login)
     $stmt->closeCursor();
     return $resultat['mail'];
 }
+function getImgSiteUser($login)
+{
+    $req = "SELECT img_site FROM user_management WHERE login = :login";
+    $stmt = getBDD()->prepare($req);
+    $stmt->bindValue(":login", $login, PDO::PARAM_STR);
+    $stmt->execute();
+    $resultat = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $resultat['img_site'];
+}
 
 function isCombinaisonValide($login, $password)
 {
@@ -62,16 +72,17 @@ function verifLoginDispo($login)
     return empty($utilisateur);
 }
 
-function bdCreerCompte($login, $passwordCrypte, $mail, $cle, $image, $role)
+function bdCreerCompte($login, $passwordCrypte, $mail, $cle, $image,$img_site,  $role)
 {
-    $req = "INSERT INTO user_management (login, password, mail, est_valide, role, cle, image)
-            VALUES(:login, :password, :mail, 0, :role, :cle, :image)";
+    $req = "INSERT INTO user_management (login, password, mail, est_valide, role, cle, image, img_site)
+            VALUES(:login, :password, :mail, 0, :role, :cle, :image, :img_site)";
     $stmt = getBDD()->prepare($req);
     $stmt->bindValue(":login", $login, PDO::PARAM_STR);
     $stmt->bindValue(":password", $passwordCrypte, PDO::PARAM_STR);
     $stmt->bindValue(":mail", $mail, PDO::PARAM_STR);
     $stmt->bindValue(":cle", $cle, PDO::PARAM_INT);
     $stmt->bindValue(":image", $image, PDO::PARAM_STR);
+    $stmt->bindValue(":img_site", $img_site, PDO::PARAM_INT);
     $stmt->bindValue(":role", $role, PDO::PARAM_STR);
     $stmt->execute();
     $creationOK = ($stmt->rowCount() > 0);
