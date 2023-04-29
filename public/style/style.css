@@ -234,6 +234,10 @@ footer {
   background-color: greenyellow;
 }
 
+.dnone {
+  display: none;
+}
+
 .form_entry_form {
   width: 100%;
 }

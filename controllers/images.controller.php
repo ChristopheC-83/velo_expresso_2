@@ -60,3 +60,16 @@ function suppressionImageUtilisateur($login)
         unlink("public/assets/images/" . $ancienne_image);
     }
 }
+
+function validation_ChangerAvatar($img)
+{
+    suppressionImageUtilisateur($_SESSION['profil']['login']);
+    $image = "profils/profils_site/".$img;
+    if (modifImageBD($_SESSION['profil']['login'], $image, 1)) {
+        ajouterMessageAlerte("Modfication de l'image effectuée.", "vert");
+        header('location:' . URL . "compte/profil");
+    } else {
+        ajouterMessageAlerte("Modfication de l'image non effectuée.", "rouge");
+        header('location:' . URL . "compte/profil");
+    }
+}

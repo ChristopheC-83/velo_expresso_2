@@ -27,7 +27,7 @@
             if (in_array(pathinfo($fichier, PATHINFO_EXTENSION), array('jpg', 'jpeg', 'png', 'gif'))) :
         ?>
                 <div class="image_site">
-                    <a href="comptechangerAvatar">
+                    <a href="changerAvatar/<?= $fichier ?>">
                         <!-- on en est là ! -->
                         <img src="<?= URL ?>/public/assets/images/profils/profils_site/<?= $fichier ?>">
                     </a>
