@@ -14,7 +14,10 @@
 
         <?php else : ?>
             <a href="<?= URL ?>compte/profil">
-                <li>Profil</li>
+                <li class="profil_navbar">
+                    <img src="<?= URL ?>/public/assets/images/<?= $utilisateur['image'] ?>" alt="" class="img_profil_navbar">
+                <p>Profil</p>
+                </li>
             </a>
 
             <?php if (estAdministrateur()) :  ?>

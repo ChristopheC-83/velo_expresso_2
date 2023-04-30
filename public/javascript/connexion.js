@@ -1,3 +1,5 @@
+// affichage des mots de passe
+
 const mdpMasque = document.querySelector(".fa-eye-slash")
 const mdpVisible = document.querySelector(".fa-eye")
 const password = document.querySelector("#password")

@@ -1,6 +1,6 @@
 .alert {
-  width:80%;
-  min-height: 60px;
+  width: 80%;
+  height: 60px;
   margin: 20px auto;
   @include flexMid;
   flex-direction: column;
@@ -10,7 +10,8 @@
   border-radius: 10px;
   color: #333;
   text-align: center;
-  padding : 5px 0;
+  padding: 5px 0;
+  visibility : 1;
 }
 
 .rouge {
@@ -22,6 +23,6 @@
 .vert {
   background-color: greenyellow;
 }
-.dnone{
+.dnone {
   display: none;
 }

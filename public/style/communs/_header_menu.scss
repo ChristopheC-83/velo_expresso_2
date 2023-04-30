@@ -12,11 +12,48 @@ header {
     align-items: center;
     justify-content: space-evenly;
   }
-  li{
+  li {
+    width: 20vw;
     font-size: 22px;
+    @include flexMid;
+    padding: 10px;
 
-    &:hover{
-        font-weight: bold;
+    &:hover {
+      font-weight: bold;
     }
-}
+  }
+
+  .profil_navbar {
+    text-align: center;
+    transition: all 1s;
+    flex-direction: column;
+    
+
+    p {
+      font-size: 0px;
+      transform: scaleY(0);
+      transition: all 1s;
+    }
+
+    .img_profil_navbar {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto;
+      object-fit: cover;
+      position: relative;
+      transition: all 1s;
+    }
+
+    &:hover {
+      .img_profil_navbar {
+        transform: translateY(-3px);
+      }
+      p {
+        font-size: 14px;
+        transform: scaleY(1);
+      }
+    }
+  }
 }

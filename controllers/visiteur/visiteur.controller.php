@@ -1,6 +1,5 @@
 <?php
 
-// require_once("./controllers/mainController.controller.php");
 require_once("./controllers/functionController.controller.php");
 require_once("./models/visiteur/visiteur.model.php");
 require_once("./controllers/functionController.controller.php");
@@ -8,6 +7,11 @@ require_once("./controllers/functionController.controller.php");
 
 function pageAccueil()
 {
+    if(isset($_SESSION['profil']['login'])) {
+        $datas =getUserInformation($_SESSION['profil']['login']);
+    }else{
+        $datas = "";
+    }
 
     $data_page = [
         "page_description" => "Description accueil",
@@ -15,6 +19,7 @@ function pageAccueil()
         "view" => "views/pages/visiteur/accueil.view.php",
         "template" => "views/commons/template.php",
         "css" => "accueilContainer",
+        "utilisateur" => $datas,
 
     ];
     genererPage($data_page);
@@ -22,7 +27,6 @@ function pageAccueil()
 
 function pageErreur($msg)
 {
-
     $data_page = [
         "page_description" => "Erreur !",
         "page_title" => "Erreur !",
@@ -36,14 +40,13 @@ function pageErreur($msg)
 
 function pageLogin()
 {
-
     $data_page = [
         "page_description" => "Page de connexion au site",
         "page_title" => "Connexion",
         "view" => "views/pages/visiteur/login.view.php",
         "template" => "views/commons/template.php",
         "css" => "loginContainer",
-        "js"=>["connexion.js"],
+        "js" => ["connexion.js"],
 
     ];
     genererPage($data_page);
@@ -58,7 +61,7 @@ function creerCompte()
         "view" => "views/pages/visiteur/creerCompte.view.php",
         "template" => "views/commons/template.php",
         "css" => "creationContainer",
-        "js"=>["gestionComptes.js"],
+        "js" => ["gestionComptes.js"],
 
     ];
     genererPage($data_page);

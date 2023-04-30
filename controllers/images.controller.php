@@ -67,6 +67,7 @@ function validation_ChangerAvatar($img)
     $image = "profils/profils_site/".$img;
     if (modifImageBD($_SESSION['profil']['login'], $image, 1)) {
         ajouterMessageAlerte("Modfication de l'image effectuée.", "vert");
+      
         header('location:' . URL . "compte/profil");
     } else {
         ajouterMessageAlerte("Modfication de l'image non effectuée.", "rouge");

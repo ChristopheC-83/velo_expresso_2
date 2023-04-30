@@ -91,3 +91,15 @@ mdpVisible.addEventListener("click", ()=>{
   verifNewPassword.type="password"
 
 })
+
+//modale changement image par image site
+const btn_modif_img_site = document.querySelector("#btn_modif_img_site")
+const overlay_img_site = document.querySelector(".overlay_img_site")
+
+btn_modif_img_site.addEventListener("click", ()=>{
+  overlay_img_site.classList.remove("dnone")
+})
+
+overlay_img_site.addEventListener("click", ()=>{
+  overlay_img_site.classList.add("dnone")
+})

@@ -38,8 +38,6 @@ function getImgSiteUser($login)
 function isCombinaisonValide($login, $password)
 {
     $passwordBd = getPasswordUser($login);
-    // on compare le password de la bd et celui du formulaire
-    // afficherTableau($passwordBd);
     return password_verify($password, $passwordBd);
 }
 

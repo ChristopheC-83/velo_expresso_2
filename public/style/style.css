@@ -164,10 +164,43 @@ header {
   justify-content: space-evenly;
 }
 .navigation li {
+  width: 20vw;
   font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
 .navigation li:hover {
   font-weight: bold;
+}
+.navigation .profil_navbar {
+  text-align: center;
+  transition: all 1s;
+  flex-direction: column;
+}
+.navigation .profil_navbar p {
+  font-size: 0px;
+  transform: scaleY(0);
+  transition: all 1s;
+}
+.navigation .profil_navbar .img_profil_navbar {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: relative;
+  transition: all 1s;
+}
+.navigation .profil_navbar:hover .img_profil_navbar {
+  transform: translateY(-3px);
+}
+.navigation .profil_navbar:hover p {
+  font-size: 14px;
+  transform: scaleY(1);
 }
 
 footer {
@@ -207,7 +240,7 @@ footer {
 
 .alert {
   width: 80%;
-  min-height: 60px;
+  height: 60px;
   margin: 20px auto;
   display: flex;
   justify-content: center;
@@ -220,6 +253,7 @@ footer {
   color: #333;
   text-align: center;
   padding: 5px 0;
+  visibility: 1;
 }
 
 .rouge {
@@ -270,6 +304,7 @@ footer {
   margin: 0 auto;
   -o-object-fit: cover;
      object-fit: cover;
+  margin-bottom: 40px;
 }
 .profilContainer .formPsw {
   margin-top: 20px;
@@ -311,9 +346,41 @@ footer {
   box-shadow: 0px 0px 0px red;
   color: black;
 }
+.profilContainer .card_profil {
+  width: 90vw;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #f1f1f1;
+  border-radius: 10px;
+  background: linear-gradient(315deg, rgba(255, 255, 255, 0.5333333333) 0%, rgba(255, 255, 255, 0.0196078431) 100%);
+  box-shadow: 2px 2px 4px #f1f1f1;
+}
+.profilContainer .overlay_img_site {
+  background-color: rgba(85, 85, 85, 0.3333333333);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+}
 .profilContainer .images_site {
+  border: 3px solid black;
+  background-color: rgba(51, 51, 51, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  width: 90vw;
+  max-width: 800px;
   display: flex;
   flex-wrap: wrap;
+  z-index: 5;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .profilContainer .images_site .image_site {
   margin: 10px;
@@ -321,6 +388,10 @@ footer {
   height: 100px;
   border-radius: 50%;
   overflow: hidden;
+}
+.profilContainer .dnone {
+  display: none;
+  transition: all 1s;
 }
 
 .droitsContainer table {
