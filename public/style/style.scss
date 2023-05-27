@@ -1,20 +1,27 @@
 @import "libs/variables";
 @import "libs/reset";
 @import "libs/mixins";
+@import "libs/utilities";
 @import "communs/header_menu";
 @import "communs/footer";
-@import "communs/titres";
 @import "communs/alertes";
-@import "pages/login";
-@import "pages/profil";
-@import "pages/droits";
 
 body {
-  background-color: #333;
-  color: #f1f1f1;
+  background-color: #f1f1f1;
+  color: #333;
   font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;
   position: relative;
-  max-width: 1920px;
+  max-width: 1440px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.bodycontent{
+  flex-grow: 1;
+}
+h1{
+  font-family: Kaushan script;
 }
