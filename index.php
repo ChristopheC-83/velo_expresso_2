@@ -38,6 +38,9 @@ try {
         case "login":
             pageLogin();
             break;
+        case "sorties":
+            pageSorties();
+            break;
         // case "validation_login":
         //     if (!empty($_POST['login']) && !empty($_POST['password'])) {
         //         $login = secureHTML($_POST['login']);

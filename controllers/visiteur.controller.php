@@ -87,3 +87,14 @@ function pageLogin()
     ];
     genererPage($data_page);
 }
+function pageSorties()
+{
+
+    $data_page = [
+        "page_description" => "Les sorties vtt dans la vaunage en groupe",
+        "page_title" => "VE _ sorties vtt",
+        "view" => "views/pages/visiteur/sorties.view.php",
+        "template" => "views/commons/template.php",
+    ];
+    genererPage($data_page);
+}
