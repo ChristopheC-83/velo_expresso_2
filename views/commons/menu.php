@@ -16,6 +16,9 @@
         <a href="<?= URL ?>mecanique">
             Mécanique
         </a>
+        <a href="<?= URL ?>sorties">
+            RDV des passionnés
+        </a>
     </div>
  
 
