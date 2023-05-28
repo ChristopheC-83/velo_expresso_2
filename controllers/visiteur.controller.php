@@ -5,11 +5,15 @@ require_once "./models/visiteurs.model.php";
 
 function pageAccueil()
 {
+
+    $photos_slider = getPhotosSlider();
+
     $data_page = [
         "page_description" => "accueil d'un magasin de vélo dans la Vaunage, à Congénies, dans le Gard, entre Nîmes, Calvisson et Sommières.",
         "page_title" => "Vélo Expresso",
         "view" => "views/pages/visiteur/accueil.view.php",
         "template" => "views/commons/template.php",
+        "photos_slider"=>$photos_slider,
     ];
     genererPage($data_page);
 }

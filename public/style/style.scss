@@ -6,7 +6,16 @@
 @import "communs/footer";
 @import "communs/alertes";
 @import "communs/modaleContact";
+@import "pages/accueil";
+@import "pages/location";
+@import "pages/mecanique";
+@import "pages/rdv";
+@import "pages/velos";
 
+
+// *{
+//   border : 1px solid violet
+// }
 body {
   background-color: #0bbbec;
   color: #333;
@@ -15,15 +24,15 @@ body {
   position: relative;
   max-width: 1440px;
   margin: 0 auto;
+  border-bottom: 1px solid transparent;
   display: flex;
   flex-direction: column;
   
-  
 }
 
-.bodycontent{
+.bodycontent {
   flex-grow: 1;
 }
-h1{
+h1 {
   font-family: Kaushan script;
 }
