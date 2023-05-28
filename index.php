@@ -6,6 +6,7 @@ define("URL", str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https"  
     $_SERVER["PHP_SELF"]));
 
 require_once("./controllers/visiteur.controller.php");
+require_once("./controllers/mailContact.controller.php");
 // require_once("./controllers/administrateur.controller.php");
 // require_once("./controllers/functionController.controller.php");
 // require_once("./controllers/security.controller.php");
@@ -40,6 +41,9 @@ try {
             break;
         case "sorties":
             pageSorties();
+            break;
+        case "mailContact":
+            mailContact();            
             break;
         // case "validation_login":
         //     if (!empty($_POST['login']) && !empty($_POST['password'])) {

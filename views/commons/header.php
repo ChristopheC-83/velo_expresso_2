@@ -13,6 +13,11 @@
     </div>
 
     <?php require_once("views/commons/menu.php") ?>
+
+    
+    <div class="fenetre-modale dnone">
+        <?php require_once("views/commons/modaleContact.view.php") ?>
+    </div>
     <!-- <div class="overlay-navbar"></div> -->
 
 </header>

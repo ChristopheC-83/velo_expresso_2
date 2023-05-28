@@ -1,0 +1,120 @@
+.fenetre-modale {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  .overlay-contact {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #55555599;
+  }
+
+  .content-modale {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%) ;
+    width: 80%;
+    min-height: 40vh;
+    border: 3px solid #333;
+    border-radius: 10px;
+    box-shadow: 4px 4px 6px #333;
+    background-color: transparent;
+    backdrop-filter: blur(8px);
+    background-color: #e9e9e950;
+
+    
+
+    h2 {
+      text-align: center;
+      color: #f1f1f1;
+    }
+  }
+
+  .content-form {
+    display: flex;
+    width: 94%;
+    margin: 0 auto;
+    gap: 10px;
+    align-items: top;
+    justify-content: center;
+    h4 {
+      margin: 0;
+      display: block;
+    }
+
+    input {
+      border-radius: 5px;
+      outline: none;
+      border: none;
+      padding: 5px;
+    }
+  }
+
+  .content-form-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    gap: 30px;
+  }
+
+  .content-form-message {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    gap: 10px;
+    margin-bottom: 50px;
+    textarea {
+      border-radius: 5px;
+      outline: none;
+      border: none;
+      padding: 5px;
+    }
+  }
+  .fermerModaleContact {
+    position: absolute;
+    bottom: 10px;
+    left: 5%;
+    cursor: pointer;
+    color: #000;
+  }
+  .envoyerMessage {
+    position: absolute;
+    bottom: 10px;
+    right: 5%;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+
+@media (max-width: 900px) {
+  .content-modale {
+    width: 96%;
+
+    .content-form {
+      flex-direction: column;
+      margin-bottom: 50px;
+    }
+    .content-form-info,
+    .content-form-message {
+      width: 100%;
+      margin-bottom: 0;
+    }
+    input {
+      width: 100%;
+    }
+
+    .numTel {
+      text-align: center;
+    }
+  }
+}
