@@ -25,3 +25,10 @@ fermerModalContact.addEventListener("click", () => {
 overlayContact.addEventListener("click", () => {
   fenetreModale.classList.toggle("dnone");
 });
+
+
+// loading contact
+
+const contactForm = document.querySelector("#contactForm");
+
+contactForm.addEventListener("on")

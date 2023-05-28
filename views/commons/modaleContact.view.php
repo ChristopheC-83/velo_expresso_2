@@ -2,7 +2,7 @@
 <div class="content-modale ">
 
     <h2>Formulaire de contact</h2>
-    <form action="mailContact" method="post">
+    <form action="mailContact" method="post" id="contactForm">
         <div class="content-form">
             <div class="content-form-info">
                 <input type="text" placeholder="votre nom" name="nomFormulaire" id="nomFormulaire">

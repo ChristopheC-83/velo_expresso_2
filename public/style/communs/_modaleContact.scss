@@ -23,8 +23,12 @@
     border: 3px solid #333;
     border-radius: 10px;
     box-shadow: 4px 4px 6px #333;
-    background-color: transparent;
-    backdrop-filter: blur(8px);
+    background :linear-gradient(
+    135deg,
+    rgba(11, 187, 236, 0.1) 50%,
+    rgba(241, 241, 241, 0.05) 100%
+  );;
+    backdrop-filter: blur(5px);
     background-color: #e9e9e950;
 
     
