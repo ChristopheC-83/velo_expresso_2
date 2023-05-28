@@ -402,17 +402,18 @@ footer a {
   transform: translateX(-50%);
   width: 80%;
   min-height: 40vh;
-  border: 3px solid #333;
+  border: 3px solid #0bbbec;
   border-radius: 10px;
-  box-shadow: 4px 4px 6px #333;
-  background: linear-gradient(135deg, rgba(11, 187, 236, 0.1) 50%, rgba(241, 241, 241, 0.05) 100%);
+  box-shadow: 2px 2px 4px #0bbbec, inset 2px 2px 4px #0bbbec, 4px 4px 6px #333;
+  background: linear-gradient(135deg, rgba(11, 187, 236, 0.1450980392) 25%, rgba(241, 241, 241, 0.05) 100%);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
-  background-color: rgba(233, 233, 233, 0.3137254902);
 }
 .fenetre-modale .content-modale h2 {
   text-align: center;
-  color: #f1f1f1;
+  color: #0bbbec;
+  -webkit-text-stroke: 0.75px black;
+  text-shadow: 0px 0px 4px #333;
 }
 .fenetre-modale .content-form {
   display: flex;
@@ -420,7 +421,7 @@ footer a {
   margin: 0 auto;
   gap: 10px;
   align-items: top;
-  justify-content: center;
+  justify-content: space-around;
 }
 .fenetre-modale .content-form h4 {
   margin: 0;
@@ -431,18 +432,19 @@ footer a {
   outline: none;
   border: none;
   padding: 5px;
+  box-shadow: 2px 2px 2px #0bbbec, 4px 4px 4px #333;
 }
 .fenetre-modale .content-form-info {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 40%;
+  padding-top: 30px;
+  width: 35%;
   gap: 30px;
 }
 .fenetre-modale .content-form-message {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 55%;
   gap: 10px;
   margin-bottom: 50px;
 }
@@ -451,6 +453,10 @@ footer a {
   outline: none;
   border: none;
   padding: 5px;
+  box-shadow: 2px 2px 2px #0bbbec, 4px 4px 4px #333;
+}
+.fenetre-modale .content-form-message label {
+  color: #000;
 }
 .fenetre-modale .fermerModaleContact {
   position: absolute;

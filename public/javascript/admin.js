@@ -16,10 +16,3 @@ function confirmationSupp(formulaire) {
   }
 }
 
-//disparition des alertes
-
-// const alert = document.querySelector(".alert");
-
-// if (alert) {
-//   alert.classList.add("disparition-alert");
-// }
