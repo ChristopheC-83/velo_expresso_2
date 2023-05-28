@@ -15,13 +15,12 @@ function mailContact()
         $mail = htmlentities($_POST['mailFormulaire']);
         $message = htmlentities($_POST['messageFormulaire']);
         $destinataire = "kiketdule@gmail.com";
-        $sujet = "Mail du site de " . $nom . " : " . $mail;
+        $sujet = "Mail de " . $nom . " : " . $mail . " => ";
+        $message = $sujet ." ".$message;
 
         if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-            $headers= 'MIME-Version: 1.0';
-            $headers .= 'Content-type: text/html; charset=iso-8859-1';
-            $headers .= "Formulaire de contact";
-            $headers .= "From : " . $mail;
+           
+            $headers = "From : " . $mail;
             if (mail($destinataire, $sujet, $message, $headers)) {
                 ajouterMessageAlerte("Mail envoyé. Il sera lu dès que possible.", "vert");
             } else {

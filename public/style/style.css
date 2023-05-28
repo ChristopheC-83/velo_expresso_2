@@ -326,8 +326,20 @@ footer a {
   text-align: center;
   padding: 5px 0;
   visibility: 1;
+  animation: disparitionAlerte 2s 2s;
+  animation-fill-mode: forwards;
 }
 
+@keyframes disparitionAlerte {
+  100% {
+    transform: translateY(-100%) scale(0);
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    margin: 0 auto;
+    visibility: hidden;
+  }
+}
 .rouge {
   background-color: rgb(243, 48, 87);
 }
@@ -344,6 +356,30 @@ footer a {
   display: none;
 }
 
+#contact-loading-animation {
+  display: none;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.contact-spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #0bbbec;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .fenetre-modale {
   position: absolute;
   top: 0;

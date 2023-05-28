@@ -31,4 +31,11 @@ overlayContact.addEventListener("click", () => {
 
 const contactForm = document.querySelector("#contactForm");
 
-contactForm.addEventListener("on")
+contactForm.addEventListener('submit', ()=> {
+  document.getElementById('contact-loading-animation').style.display = 'block';
+
+  setTimeout(function() {
+    document.getElementById('contact-loading-animation').style.display = 'none';
+    window.location.href = "http://localhost:8090/Gaston/velo_expresso/accueil";
+  }, 3000); 
+});

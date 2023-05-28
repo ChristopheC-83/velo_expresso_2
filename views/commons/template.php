@@ -45,6 +45,7 @@
     <?php endif ?>
 
     <script src="<?= URL ?>public/javascript/navbar.js"></script>
+    <script src="<?= URL ?>public/javascript/admin.js"></script>
 </body>
 
 </html>
