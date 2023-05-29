@@ -6,12 +6,10 @@
         <i class="fa-solid fa-circle-left btn-slider" id="previous"></i>
         <i class="fa-solid fa-circle-right btn-slider" id="next"></i>
 
-        <?php $counter = 1; ?>
 
         <?php foreach ($photos_slider as $photo) : ?>
-            <img src="<?= URL ?>public/assets/images/slider/<?= $photo['image'] ?>" alt="" class="img-slider <?= $photo['id'] === 1 ? "" : "dnone" ?>" data-num="<?= $counter ?>">
+            <img src="<?= URL ?>public/assets/images/slider/<?= $photo['image'] ?>" alt="" class="img-slider <?= $photo['id'] === 1 ? "" : "dnone" ?>" >
 
-            <?php $counter++; ?>
         <?php endforeach ?>
     </div>
 

@@ -12,7 +12,6 @@
 @import "pages/rdv";
 @import "pages/velos";
 
-
 // *{
 //   border : 1px solid violet
 // }
@@ -27,12 +26,17 @@ body {
   border-bottom: 1px solid transparent;
   display: flex;
   flex-direction: column;
-  
 }
 
 .bodycontent {
   flex-grow: 1;
 }
-h1 {
+
+
+h1,
+h2,
+h3{
+  text-shadow: 2px 2px 4px #000;
   font-family: Kaushan script;
+  color:#f1f1f1;
 }

@@ -10,6 +10,7 @@ navHamburger.addEventListener("click", () => {
 
 //modale de contact
 
+const btnModalContact2 = document.querySelector("#contact-loc"); //sur page location
 const btnModalContact = document.querySelector(".modal-contact");
 const fermerModalContact = document.querySelector(".fermerModaleContact");
 const fenetreModale = document.querySelector(".fenetre-modale");
@@ -24,6 +25,15 @@ fermerModalContact.addEventListener("click", () => {
 overlayContact.addEventListener("click", () => {
   fenetreModale.classList.toggle("dnone");
 });
+
+if (btnModalContact2) {
+  btnModalContact2.addEventListener("click", () =>
+    fenetreModale.classList.toggle("dnone")
+  );
+  btnModalContact2.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
 
 // loading contact
 
@@ -51,32 +61,32 @@ let nb_img = img_slider.length;
 // on affiche l'image avec id=1
 let etape = 0;
 
-
-suivant.addEventListener("click", function () {
-  img_slider[etape].classList.add("dnone");
-  etape++;
-  if (etape >= nb_img) {
-    etape =0;
-  }
-  img_slider[etape].classList.remove("dnone");
-});
-
-precedent.addEventListener("click", function () {
-  img_slider[etape].classList.add("dnone");
-  etape--;
-  if (etape < 0) {
-    etape = nb_img - 1;
-  }
-  img_slider[etape].classList.remove("dnone");
-});
-
-// pour défilement automatique :
-setInterval(function(){
-  
-  img_slider[etape].classList.add("dnone");
+if (suivant) {
+  suivant.addEventListener("click", () => {
+    img_slider[etape].classList.add("dnone");
     etape++;
     if (etape >= nb_img) {
-        etape=0;
+      etape = 0;
     }
-    img_slider[etape].classList.remove('dnone')
-},5000)
+    img_slider[etape].classList.remove("dnone");
+  });
+
+  precedent.addEventListener("click", () => {
+    img_slider[etape].classList.add("dnone");
+    etape--;
+    if (etape < 0) {
+      etape = nb_img - 1;
+    }
+    img_slider[etape].classList.remove("dnone");
+  });
+
+  // pour défilement automatique :
+  setInterval(function () {
+    img_slider[etape].classList.add("dnone");
+    etape++;
+    if (etape >= nb_img) {
+      etape = 0;
+    }
+    img_slider[etape].classList.remove("dnone");
+  }, 5000);
+}
