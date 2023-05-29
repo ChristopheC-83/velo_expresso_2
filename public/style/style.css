@@ -524,6 +524,57 @@ footer a {
     text-align: center;
   }
 }
+.carte-velo {
+  position: relative;
+  width: 400px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 2px 2px 20px 5px #333;
+  overflow: hidden;
+}
+.carte-velo p {
+  font-size: 16px;
+}
+.carte-velo img {
+  width: 100%;
+  height: 75%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.carte-velo .info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #f1f1f1;
+}
+.carte-velo .info-content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+}
+.carte-velo .info-content p {
+  display: block;
+  margin: 10px 0;
+  text-shadow: 0px 0px 1px #333;
+}
+.carte-velo .plus {
+  position: absolute;
+  color: #055d76;
+  border: 3px solid #f1f1f1;
+  border-radius: 50%;
+  font-size: 30px;
+  background-color: #f1f1f1;
+  top: 10px;
+  right: 10px;
+}
+
 .pageAccueil {
   margin-bottom: 40px;
 }
@@ -879,6 +930,17 @@ h3.maps {
     /* transform: rotate(180deg); */
   }
 }
+.cartes_velos {
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  border: 1px solid violet;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 30px 2vw;
+}
+
 body {
   background-color: #0bbbec;
   color: #333;
@@ -902,4 +964,5 @@ h3 {
   text-shadow: 2px 2px 4px #000;
   font-family: Kaushan script;
   color: #f1f1f1;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */

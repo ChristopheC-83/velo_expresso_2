@@ -6,6 +6,8 @@
 @import "communs/footer";
 @import "communs/alertes";
 @import "communs/modaleContact";
+@import "communs/carte_velo";
+@import "communs/carte_velo_detaillee";
 @import "pages/accueil";
 @import "pages/location";
 @import "pages/mecanique";
@@ -39,4 +41,6 @@ h3{
   text-shadow: 2px 2px 4px #000;
   font-family: Kaushan script;
   color:#f1f1f1;
+  text-align: center;
+  
 }

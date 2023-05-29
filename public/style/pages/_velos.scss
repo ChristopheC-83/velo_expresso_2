@@ -1,0 +1,11 @@
+.cartes_velos{
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    border : 1px solid violet;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px 2vw;
+
+}
