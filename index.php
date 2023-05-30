@@ -45,6 +45,9 @@ try {
         case "mailContact":
             mailContact();            
             break;
+        case "velo_detaille":
+            echo (afficherTableau($_POST));            
+            break;
         // case "validation_login":
         //     if (!empty($_POST['login']) && !empty($_POST['password'])) {
         //         $login = secureHTML($_POST['login']);

@@ -49,5 +49,12 @@
     background-color: #f1f1f1;
     top: 10px;
     right: 10px;
+    cursor: pointer;
   }
+
+  form{
+    position: absolute;
+    visibility: hidden;
+  }
+  
 }

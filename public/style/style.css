@@ -573,6 +573,11 @@ footer a {
   background-color: #f1f1f1;
   top: 10px;
   right: 10px;
+  cursor: pointer;
+}
+.carte-velo form {
+  position: absolute;
+  visibility: hidden;
 }
 
 .pageAccueil {
@@ -934,7 +939,6 @@ h3.maps {
   width: 100%;
   display: flex;
   margin: 0 auto;
-  border: 1px solid violet;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;

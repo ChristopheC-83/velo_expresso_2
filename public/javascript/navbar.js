@@ -90,3 +90,26 @@ if (suivant) {
     img_slider[etape].classList.remove("dnone");
   }, 5000);
 }
+
+// pour faire apparaitre fiche détaillée vélo
+
+const btn_velo_plus = document.querySelectorAll(".plus_form_velo_plus")
+
+
+if(btn_velo_plus){
+
+  btn_velo_plus.forEach((btn)=>{
+    btn.addEventListener("click", ()=>{
+      const num = btn.getAttribute('data-num')
+      document.getElementById('form_velo_plus'+num).submit()
+      console.log(num)
+    
+    })
+  
+  })
+
+  // btn_velo_plus.addEventListener("click", ()=>{
+  //   form_velo_plus.submit()
+  //   console.log(data-num)
+  // })
+}
