@@ -5,9 +5,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px solid #f1f1f1;
   border-radius: 5px;
   box-shadow: 2px 2px 20px 5px #333;
   overflow: hidden;
+  cursor: pointer;
   p {
     font-size: 16px;
   }

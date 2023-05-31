@@ -45,6 +45,20 @@ function pageVelos()
     ];
     genererPage($data_page);
 }
+function pageVelo($velo_id)
+{
+    $getVelo =  getVelo($velo_id);
+    $velo=$getVelo[0];
+
+    $data_page = [
+        "page_description" => "Les caractérisques du " .$velo['marque']." ".$velo['modele'],
+        "page_title" => "VE _ Vélo Détaillé",
+        "view" => "views/pages/visiteur/velo.view.php",
+        "template" => "views/commons/template.php",
+        "velo" => $velo,
+    ];
+    genererPage($data_page);
+}
 function pageOccasions()
 {
     $occasions =  getOccasions();

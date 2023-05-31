@@ -1,11 +1,11 @@
-<div class="carte-velo">
+<div class="carte-velo plus_form_velo_plus" data-num="<?= $velo['velo_id'] ?>">
     <img src="<?= URL ?>public/assets/images/velos/<?= $velo['photo'] ?>" alt="">
 
     <form action="<?= URL ?>velo_detaille" method="post" id="form_velo_plus<?= $velo['velo_id'] ?>">
         <input type="hidden" name="velo_id" value="<?= $velo['velo_id'] ?>">
     </form>
 
-    <i class="fa-solid fa-circle-plus plus plus_form_velo_plus" data-num="<?= $velo['velo_id'] ?>"></i>
+    <i class="fa-solid fa-circle-plus plus " ></i>
 
     <div class="info">
         <div class="info-content">

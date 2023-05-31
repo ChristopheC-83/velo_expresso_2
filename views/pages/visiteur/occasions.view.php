@@ -1,12 +1,19 @@
-<div class="">
-
+<div class="velos">
     <h1>Vélos d'occasion</h1>
-   
+    <h2>Disponibles dès maintetant en magasin.</h2>
+
+    <div class="cartes_velos">
+
+        <?php foreach ($occasions as $velo) : ?>
+
+            <?php require("views/commons/carte_velo_xs.php") ?>
 
 
-<?=afficherTableau($occasions)?>
 
 
+        <?php endforeach ?>
+
+    </div>
 
 
 
