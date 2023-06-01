@@ -7,8 +7,8 @@ define("URL", str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https"  
 
 require_once("./controllers/visiteur.controller.php");
 require_once("./controllers/mailContact.controller.php");
-// require_once("./controllers/administrateur.controller.php");
-// require_once("./controllers/functionController.controller.php");
+require_once("./controllers/administrateur.controller.php");
+require_once("./controllers/functions.controller.php");
 require_once("./controllers/security.controller.php");
 // require_once("./controllers/images.controller.php");
 
@@ -56,20 +56,39 @@ try {
                 validation_login($login, $password);
             } else {
                 ajouterMessageAlerte('Login ou mot de passe non renseigné.', 'rouge');
-                header('location:' . URL . "accueil");
+                header('location:' . URL . "adminVE");
                 exit;
             }
             break;
 
 
-        case "adminConnecte":
+        case "admin":
             if (!estConnecte()) {
                 header('location:' . URL . "accueil");
                 session_unset();
                 ajouterMessageAlerte("Voie sans issue ! 😅", "rouge");
             } else {
-                echo "youhou";
-                // switch ($url[1]) {
+                switch ($url[1]) {
+                case "accueilAdmin":
+                accueilAdmin();
+                break;
+                case "deconnexion":
+                deconnexion();
+                break;
+                case "marques":
+                    switch ($url[2]){
+                        case "visualisation":
+                            echo "voir marques";
+                            // marquesVisualisation();
+                            break;                    
+                        case "creation":
+                            echo "creation marques";
+                            // marquesVisualisation();
+                            break;                    
+                    }
+
+
+                    break;
                 //     case 
                     // case "modifNeufs":
                     //     pageModifNeufs();
@@ -85,7 +104,7 @@ try {
                     //     break;
                 // }
             }
-
+        }
             break;
         default:
             throw new Exception("La page demandée n'existe pas.");

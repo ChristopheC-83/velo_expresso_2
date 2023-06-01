@@ -1,0 +1,49 @@
+.administration {
+  .adminCriteres {
+    width: 96%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+
+    .critere {
+      width: 15vw;
+      min-width: 150px;
+      height: 10vw;
+      min-height: 100px;
+      border: 1px solid #333;
+      border-radius: 3px;
+      box-shadow: 1px 1px 2px #333;
+      display: flex;
+      flex-direction: column;
+
+      h4 {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        text-align: center;
+        color : #f1f1f1;
+      }
+    }
+
+    .btns_criteres {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      a {
+        border-radius: 5px;
+        box-shadow: 1px 1px 2px #333;
+        border: 1px solid white;
+        padding: 5px 10px;
+        font-weight: bold;
+
+        &:first-child {
+          background-color: yellow;
+        }
+        &:nth-child(2) {
+          background-color: green;
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 <nav class="navigation ">
 
     <div class="navlinks-container">
-        <a href="<?= URL ?>accueil">
+        <a href="<?= URL ?>accueil" >
             Accueil
         </a>
         <a href="<?= URL ?>velos">
@@ -19,6 +19,15 @@
         <a href="<?= URL ?>sorties">
             RDV des passionnés
         </a>
+        <?php if(estConnecte()) : ?>
+            <a href="<?= URL ?>admin/accueilAdmin">
+            Accueil Admin
+        </a>
+            <a href="<?= URL ?>admin/deconnexion">
+         Déconnexion
+        </a>
+
+            <?php endif ; ?>
     </div>
  
 
