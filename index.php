@@ -9,7 +9,7 @@ require_once("./controllers/visiteur.controller.php");
 require_once("./controllers/mailContact.controller.php");
 // require_once("./controllers/administrateur.controller.php");
 // require_once("./controllers/functionController.controller.php");
-// require_once("./controllers/security.controller.php");
+require_once("./controllers/security.controller.php");
 // require_once("./controllers/images.controller.php");
 
 try {
@@ -36,55 +36,57 @@ try {
         case "mecanique":
             pageMecanique();
             break;
-        case "login":
-            pageLogin();
-            break;
         case "sorties":
             pageSorties();
             break;
         case "mailContact":
-            mailContact();            
+            mailContact();
             break;
         case "velo_detaille":
-            pageVelo($_POST['velo_id']);            
+            pageVelo($_POST['velo_id']);
             break;
-        // case "validation_login":
-        //     if (!empty($_POST['login']) && !empty($_POST['password'])) {
-        //         $login = secureHTML($_POST['login']);
-        //         $password = secureHTML($_POST['password']);
-        //         validation_login($login, $password);
-        //     } else {
-        //         ajouterMessageAlerte('Login ou mot de passe non renseigné.', 'rouge');
-        //         header('location:' . URL . "login");
-        //         exit;
-        //     }
-        //     break;
-       
-        
-        // case "admin":
-        //     if (!estConnecte()) {
-        //         header('location:' . URL . "accueil");
-        //         session_unset();
-        //         ajouterMessageAlerte("Voie sans issue ! 😅", "rouge");
-        //     } else {
-        //         switch ($url[1]) {
-        //             case "modifNeufs":
-        //                 pageModifNeufs();
-        //                 break;
-        //             case "validationModifNeufs":
-        //                 pageValidationModifNeufs();
-        //                 break;
-        //                 case "modifOccasions":
-        //                 pageModifOccasions();
-        //                 break;
-        //             case "validationModifOccasions":
-        //                 pageValidationModifOccasions();
-        //                 break;
-                    
-        //             }
-        //     }
+        case "adminVE":
+            pageLogin();
+            break;
+        case "validation_login":
 
-            // break;
+            if (!empty($_POST['login']) && !empty($_POST['password'])) {
+                $login = secureHTML($_POST['login']);
+                $password = secureHTML($_POST['password']);
+                validation_login($login, $password);
+            } else {
+                ajouterMessageAlerte('Login ou mot de passe non renseigné.', 'rouge');
+                header('location:' . URL . "accueil");
+                exit;
+            }
+            break;
+
+
+        case "adminConnecte":
+            if (!estConnecte()) {
+                header('location:' . URL . "accueil");
+                session_unset();
+                ajouterMessageAlerte("Voie sans issue ! 😅", "rouge");
+            } else {
+                echo "youhou";
+                // switch ($url[1]) {
+                //     case 
+                    // case "modifNeufs":
+                    //     pageModifNeufs();
+                    //     break;
+                    // case "validationModifNeufs":
+                    //     pageValidationModifNeufs();
+                    //     break;
+                    // case "modifOccasions":
+                    //     pageModifOccasions();
+                    //     break;
+                    // case "validationModifOccasions":
+                    //     pageValidationModifOccasions();
+                    //     break;
+                // }
+            }
+
+            break;
         default:
             throw new Exception("La page demandée n'existe pas.");
     }

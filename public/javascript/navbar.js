@@ -113,3 +113,22 @@ if(btn_velo_plus){
   //   console.log(data-num)
   // })
 }
+
+// affichage mdp
+
+const mdpMasque = document.querySelector(".fa-eye-slash");
+const mdpVisible = document.querySelector(".fa-eye");
+const passwordAdmin = document.getElementById("password");
+
+if (mdpMasque) {
+  mdpMasque.addEventListener("click", () => {
+    mdpMasque.classList.add("dnone");
+    mdpVisible.classList.remove("dnone");
+    passwordAdmin.type = "text";
+  });
+  mdpVisible.addEventListener("click", () => {
+    mdpMasque.classList.remove("dnone");
+    mdpVisible.classList.add("dnone");
+    passwordAdmin.type = "password";
+  });
+}
