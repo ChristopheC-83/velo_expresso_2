@@ -1,7 +1,1 @@
-{
-  "dependencies": {
-    "formik": "^2.4.0",
-    "mailjet": "^0.0.1",
-    "yup": "^1.2.0"
-  }
-}
+{}

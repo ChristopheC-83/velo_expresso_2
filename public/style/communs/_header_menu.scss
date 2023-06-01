@@ -34,7 +34,8 @@ header {
 }
 .modal-contact {
   font-size: calc(14px + 0.6vw);
-  margin-bottom: 8px;
+  display: flex;
+  align-items: center;justify-content: center;
   text-shadow: 1px 1px 1px #055D76;
   cursor: pointer;
 }
@@ -64,7 +65,7 @@ header {
         height: 1.5px;
         transform: scaleX(0);
         transform-origin: left;
-        background: #333;
+        background: #f1f1f1;
         transition: transform 0.3s;
       }
 

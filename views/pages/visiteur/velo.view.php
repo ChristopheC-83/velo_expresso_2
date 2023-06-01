@@ -34,7 +34,7 @@
                 <th>Type de vélo</th>
                 <td><?= $velo['type_velo'] ?></td>
             </tr>
-            <tr>
+            <tr class="description">
                 <th>Description</th>
                 <td><?= $velo['description'] ?></td>
             </tr>

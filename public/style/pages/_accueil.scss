@@ -1,20 +1,20 @@
 .pageAccueil {
   margin-bottom: 40px;
 
-  h1,
-  h2,
-  h3 {
-    font-family: Kaushan script;
-    text-shadow: 2px 2px 4px #000;
-    text-align: center;
-    color: #f1f1f1;
-  }
+  // h1,
+  // h2,
+  // h3 {
+  //   font-family: Kaushan script;
+  //   text-shadow: 2px 2px 4px #000;
+  //   text-align: center;
+  //   color: #f1f1f1;
+  // }
 
-  p {
-    text-shadow: 1px 1px 4px #055d76;
-    text-align: center;
-    color: #f1f1f1;
-  }
+  // p {
+  //   text-shadow: 1px 1px 4px #055d76;
+  //   text-align: center;
+  //   color: #f1f1f1;
+  // }
 }
 
 .slider {
@@ -99,9 +99,9 @@ h3.maps {
 }
 
 .carte {
-  border-radius: 15px;
+  border-radius: 3px;
   overflow: hidden;
-  box-shadow: 2px 2px 5px #333;
+  box-shadow: 1px 1px 3px #333;
   margin-bottom: 20px;
 }
 

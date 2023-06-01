@@ -8,11 +8,11 @@
     <i class="fa-solid fa-circle-plus plus " ></i>
 
     <div class="info">
-        <div class="info-content">
+        <div class=" info-content info-content-1">
             <p><u><b>Marque</b></u> : <?= $velo['marque'] ?></p>
             <p><u><b>Modèle</b></u> : <?= $velo['modele'] ?></p>
         </div>
-        <div class="info-content">
+        <div class="info-content info-content-2">
             <p><b><u>Prix :</u></b> </p>
             <p><?= $velo['prix'] ?> €</p>
         </div>

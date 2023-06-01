@@ -7,17 +7,18 @@
 @import "communs/alertes";
 @import "communs/modaleContact";
 @import "communs/carte_velo";
-@import "communs/carte_velo_detaillee";
 @import "pages/accueil";
 @import "pages/location";
 @import "pages/mecanique";
 @import "pages/rdv";
 @import "pages/velos";
-@import "pages/";
+@import "pages/carte_velo_detaille";
 
 // *{
 //   border : 1px solid violet
 // }
+
+
 body {
   background-color: #0bbbec;
   color: #333;
@@ -34,15 +35,15 @@ body {
 .bodycontent {
   flex-grow: 1;
 }
-
-
 h1,
 h2,
-h3{
-  text-shadow: 2px 2px 4px #000;
-  font-family: Kaushan script;
-  color:#f1f1f1;
+h3 {
+  text-shadow: 1px 1px 2px #333;
+  color: #f1f1f1;
   text-align: center;
-  
+  font-family: Arial, Helvetica, sans-serif;
 }
 
+h1 {
+  font-family: Kaushan script;
+}

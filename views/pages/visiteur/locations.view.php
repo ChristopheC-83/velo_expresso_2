@@ -1,7 +1,7 @@
 <section class="loc-location">
 
         
-<h2 class="loc-title">La location par Vélo-Expresso</h2>
+<h1>La location par Vélo-Expresso</h1>
 
 
 <div class="loc-img-glass">
