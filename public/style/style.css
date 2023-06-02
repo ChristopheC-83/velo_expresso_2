@@ -1001,16 +1001,20 @@ h3.maps {
 
 .administration .adminCriteres {
   width: 96%;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px #333;
+  border: 1px solid white;
+  padding: 15px 10px;
+  background-color: rgba(40, 245, 108, 0.3137254902);
 }
 .administration .adminCriteres .critere {
-  width: 15vw;
-  min-width: 150px;
-  height: 10vw;
-  min-height: 100px;
+  width: 150px;
+  height: 100px;
   border: 1px solid #333;
   border-radius: 3px;
   box-shadow: 1px 1px 2px #333;
@@ -1021,7 +1025,8 @@ h3.maps {
   text-decoration: underline;
   text-underline-offset: 3px;
   text-align: center;
-  color: #f1f1f1;
+  color: #333;
+  font-size: 16px;
 }
 .administration .adminCriteres .btns_criteres {
   display: flex;
@@ -1040,6 +1045,31 @@ h3.maps {
 }
 .administration .adminCriteres .btns_criteres a:nth-child(2) {
   background-color: green;
+}
+
+.pageCriteres table {
+  width: 90%;
+  margin: 20px auto;
+}
+.pageCriteres table,
+.pageCriteres tr,
+.pageCriteres th,
+.pageCriteres td {
+  border: 1px solid #333;
+}
+.pageCriteres tr td {
+  padding: 5px 0;
+  text-align: center;
+}
+.pageCriteres tr td:nth-child(2) {
+  text-align: left;
+  padding-left: 3vw;
+}
+.pageCriteres tr .supprimer {
+  background-color: crimson;
+}
+.pageCriteres tr .modifier {
+  background-color: yellowgreen;
 }
 
 body {

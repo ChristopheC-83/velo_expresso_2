@@ -1,0 +1,32 @@
+.pageCriteres {
+  table {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  table,
+  tr,
+  th,
+  td {
+    border: 1px solid #333;
+  }
+  tr{
+    td{
+        padding: 5px 0;
+        text-align: center;
+        
+        &:nth-child(2){
+            text-align: left;
+            padding-left: 3vw;
+        }
+        
+    }
+
+    .supprimer{
+        background-color: crimson;
+    }
+    .modifier{
+        background-color: yellowgreen;
+    }
+}
+}

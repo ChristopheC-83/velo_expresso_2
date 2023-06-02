@@ -10,6 +10,7 @@ require_once("./controllers/mailContact.controller.php");
 require_once("./controllers/administrateur.controller.php");
 require_once("./controllers/functions.controller.php");
 require_once("./controllers/security.controller.php");
+require_once("./controllers/criteres.controller.php");
 // require_once("./controllers/images.controller.php");
 
 try {
@@ -69,42 +70,82 @@ try {
                 ajouterMessageAlerte("Voie sans issue ! 😅", "rouge");
             } else {
                 switch ($url[1]) {
-                case "accueilAdmin":
-                accueilAdmin();
-                break;
-                case "deconnexion":
-                deconnexion();
-                break;
-                case "marques":
-                    switch ($url[2]){
-                        case "visualisation":
-                            echo "voir marques";
-                            // marquesVisualisation();
-                            break;                    
-                        case "creation":
-                            echo "creation marques";
-                            // marquesVisualisation();
-                            break;                    
-                    }
-
-
-                    break;
-                //     case 
-                    // case "modifNeufs":
-                    //     pageModifNeufs();
-                    //     break;
-                    // case "validationModifNeufs":
-                    //     pageValidationModifNeufs();
-                    //     break;
-                    // case "modifOccasions":
-                    //     pageModifOccasions();
-                    //     break;
-                    // case "validationModifOccasions":
-                    //     pageValidationModifOccasions();
-                    //     break;
-                // }
+                    case "accueilAdmin":
+                        accueilAdmin();
+                        break;
+                    case "deconnexion":
+                        deconnexion();
+                        break;
+                    case "marques":
+                        switch ($url[2]) {
+                            case "visualisation":
+                                visualisation($url[1]);
+                                break;
+                                // case "creation":
+                                //     creation($url[2]);
+                                //     break;
+                        }
+                        break;
+                    case "nb_vitesses":
+                        switch ($url[2]) {
+                            case "visualisation":
+                                visualisation($url[1]);
+                                break;
+                            case "creation":
+                                echo "creation nb_vitesses";
+                                // marquesVisualisation();
+                                break;
+                        }
+                        break;
+                    case "suspension":
+                        switch ($url[2]) {
+                            case "visualisation":
+                                visualisation($url[1]);
+                                break;
+                            case "creation":
+                                echo "creation suspension";
+                                // marquesVisualisation();
+                                break;
+                        }
+                        break;
+                    case "taille_cadres":
+                        switch ($url[2]) {
+                            case "visualisation":
+                                visualisation($url[1]);
+                                break;
+                            case "creation":
+                                echo "creation cadre";
+                                // marquesVisualisation();
+                                break;
+                        }
+                        break;
+                    case "taille_roues":
+                        switch ($url[2]) {
+                            case "visualisation":
+                                visualisation($url[1]);
+                                break;
+                            case "creation":
+                                echo "creation roues";
+                                // marquesVisualisation();
+                                break;
+                        }
+                        break;
+                    case "type_velo":
+                        switch ($url[2]) {
+                            case "visualisation":
+                                visualisation($url[1]);
+                                break;
+                            case "creation":
+                                echo "creation type";
+                                // marquesVisualisation();
+                                break;
+                        }
+                        break;
+                    default:
+                        throw new Exception("La page demandée n'existe pas.");
+                }
             }
-        }
+
             break;
         default:
             throw new Exception("La page demandée n'existe pas.");

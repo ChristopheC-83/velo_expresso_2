@@ -1,16 +1,18 @@
 .administration {
   .adminCriteres {
     width: 96%;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px #333;
+    border: 1px solid white;
+    padding: 15px 10px;
+    background-color: #28f56c50;
 
-    .critere {
-      width: 15vw;
-      min-width: 150px;
-      height: 10vw;
-      min-height: 100px;
+    .critere {width: 150px;height: 100px;
       border: 1px solid #333;
       border-radius: 3px;
       box-shadow: 1px 1px 2px #333;
@@ -21,7 +23,8 @@
         text-decoration: underline;
         text-underline-offset: 3px;
         text-align: center;
-        color : #f1f1f1;
+        color : #333;
+        font-size: 16px;
       }
     }
 
