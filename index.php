@@ -81,6 +81,9 @@ try {
                             case "visualisation":
                                 visualisation($url[1]);
                                 break;
+                            case "validationSuppression":
+                                suppression($url[1]);
+                                break;
                                 // case "creation":
                                 //     creation($url[2]);
                                 //     break;
@@ -91,10 +94,11 @@ try {
                             case "visualisation":
                                 visualisation($url[1]);
                                 break;
-                            case "creation":
-                                echo "creation nb_vitesses";
+
+                                // case "creation":
+                                //     echo "creation nb_vitesses";
                                 // marquesVisualisation();
-                                break;
+                                // break;
                         }
                         break;
                     case "suspension":

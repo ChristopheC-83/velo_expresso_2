@@ -28,3 +28,19 @@ function visualisation($critere)
         header('location:' . URL . "accueil");
     }
 }
+
+function suppression($critere)
+{
+    if (estConnecte()) {
+        // afficherTableau($_POST['critere']);
+        // afficherTableau($_POST['nom_colonne_id_critere']);
+        // afficherTableau($_POST['id_critere']);
+        if (deleteDBCritereItem($_POST['critere'], $_POST['nom_colonne_id_critere'], $_POST['id_critere'])) {
+            ajouterMessageAlerte("Suppression effectuée.", "vert");
+            header('location:' . URL . "admin/accueilAdmin");
+        };
+    } else {
+        ajouterMessageAlerte("Vous n'avez le droit d'être là !", "rouge");
+        header('location:' . URL . "accueil");
+    }
+}

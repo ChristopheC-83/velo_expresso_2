@@ -28,3 +28,16 @@ function getNomColonnes($critere){
     $stmt->closeCursor();
     return $nomColonnes;
 }
+function deleteDBCritereItem($table, $colonne, $id){
+    $req = "DELETE from $table
+    WHERE $colonne = :id
+    ";
+    $stmt = getBDD()->prepare($req);
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+    $validationOk = ($stmt->rowCount() > 0);
+    $stmt->closeCursor();
+    return $validationOk;
+}
+
+
