@@ -11,6 +11,7 @@ require_once("./controllers/administrateur.controller.php");
 require_once("./controllers/functions.controller.php");
 require_once("./controllers/security.controller.php");
 require_once("./controllers/criteres.controller.php");
+require_once("./controllers/velos.controller.php");
 // require_once("./controllers/images.controller.php");
 
 try {
@@ -69,6 +70,7 @@ try {
                 session_unset();
                 ajouterMessageAlerte("Voie sans issue ! 😅", "rouge");
             } else {
+
                 switch ($url[1]) {
                     case "accueilAdmin":
                         accueilAdmin();
@@ -188,6 +190,27 @@ try {
                             case "validationCreation":
                                 validationCreation($url[1]);
                                 break;
+                        }
+                    case "velos":
+                        switch ($url[2]) {
+                            case "visualisationVelosNeufs":
+                                visualisationVelos(1);
+                                break;
+                            case "visualisationVelosOccasion":
+                                visualisationVelos(0);
+                                break;
+                            case "validationVeloSuppression":
+                                validationVeloSuppression();
+                                break;
+                            // case "validationModification":
+                            //     modification($url[1]);
+                            //     break;
+                            // case "creation":
+                            //     creation($url[1]);
+                            //     break;
+                            // case "validationCreation":
+                            //     validationCreation($url[1]);
+                            //     break;
                         }
                         break;
                     default:

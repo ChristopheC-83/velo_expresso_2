@@ -35,6 +35,10 @@
     border: 1px solid #333;
   }
   tr {
+    th{
+    
+      padding: 10px 0;
+    }
     td {
       padding: 5px 0;
       text-align: center;
@@ -46,14 +50,19 @@
     }
 
     .supprimer {
+      padding: 5px 15px;
       background-color: crimson;
+      color: #f1f1f1;
       border-radius: 5px;
     }
     .modifier {
-      background-color: yellowgreen;
+      padding: 5px 15px;
+      background-color: rgb(114, 168, 5);
+      color: #f1f1f1;
       border-radius: 5px;
     }
     .validerModif {
+      padding: 5px 15px;
       background-color: #055d76;
       color: #f1f1f1;
       border-radius: 5px;

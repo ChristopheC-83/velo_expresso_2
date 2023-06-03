@@ -3,13 +3,31 @@
     <h2>Page d'administration</h2>
 
 
-    <div class="adminVelo">Les velos</div>
+    <div class="adminVelo"><h3>Les velos</h3></div>
+    <div class="adminCriteres adminVelo">
+        <div class="critere velos">
+            <h4>Les Neufs</h4>
+            <div class="btns_criteres">
+                <a href="<?= URL ?>admin/velos/visualisationVelosNeufs">Voir</a>
+                <a href="<?= URL ?>admin/velos/creation">Créer</a>
+            </div>
+        </div>
+        <div class="critere velos">
+            <h4>Les Occasions</h4>
+            <div class="btns_criteres">
+                <a href="<?= URL ?>admin/velos/visualisationVelosOccasion">Voir</a>
+                <a href="<?= URL ?>admin/velos/creation">Créer</a>
+            </div>
+        </div>
+    </div>
+
 
     
 
     <div class="adminSlider">Les photos sliders</div>
 
 
+    <div class="adminVelo"><h3>Les critères</h3></div>
     <div class="adminCriteres">
         <div class="critere">
             <h4>Marques</h4>

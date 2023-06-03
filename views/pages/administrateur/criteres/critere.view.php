@@ -14,7 +14,7 @@
 
     ?>
 
-    <table>
+    <table class="tableVE">
         <thead>
             <tr>
                 <th>Id</th>
@@ -42,7 +42,7 @@
                                 <input type="hidden" name="id_critere" value="<?= $criteresItem[$id_critere] ?>">
                                 <input type="hidden" name="nom_colonne_id_critere" value="<?= $id_critere ?>">
                                 <input type="hidden" name="critere" value="<?= $critere ?>">
-                                <button class="modifier" type="submit">Mod.</button>
+                                <button class="modifier" type="submit"><i class="fa-regular fa-pen-to-square"></i></button>
                             </form>
                         </td>
 
@@ -52,7 +52,7 @@
                                 <input type="hidden" name="id_critere" value="<?= $criteresItem[$id_critere] ?>">
                                 <input type="hidden" name="nom_colonne_id_critere" value="<?= $id_critere ?>">
                                 <input type="hidden" name="critere" value="<?= $critere ?>">
-                                <button class="supprimer" type="submit">Supp.</button>
+                                <button class="supprimer" type="submit"><i class="fa-regular fa-trash-can"></i></button>
                             </form>
                         </td>
                     </tr>
@@ -72,7 +72,7 @@
                                 <input type="hidden" name="nom_colonne_id_critere" value="<?= $id_critere ?>">
                                 <input type="hidden" name="nom_colonne_critere" value="<?= $nom_critere ?>">
                                 <input type="hidden" name="critere" value="<?= $critere ?>">
-                                <button class="validerModif" type="submit">Valider Modif.</button>
+                                <button class="validerModif" type="submit">Valider <i class="fa-regular fa-paper-plane"></i></button>
                             </td>
                         </tr>
                     </form>

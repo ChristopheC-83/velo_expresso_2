@@ -1010,7 +1010,7 @@ h3.maps {
   box-shadow: 1px 1px 2px #333;
   border: 1px solid white;
   padding: 15px 10px;
-  background-color: rgba(40, 245, 108, 0.3137254902);
+  background-color: rgba(97, 231, 142, 0.3137254902);
 }
 .administration .adminCriteres .critere {
   width: 150px;
@@ -1020,6 +1020,7 @@ h3.maps {
   box-shadow: 1px 1px 2px #333;
   display: flex;
   flex-direction: column;
+  background-color: rgba(40, 245, 108, 0.3137254902);
 }
 .administration .adminCriteres .critere h4 {
   text-decoration: underline;
@@ -1045,6 +1046,15 @@ h3.maps {
 }
 .administration .adminCriteres .btns_criteres a:nth-child(2) {
   background-color: green;
+}
+.administration .adminVelo {
+  background-color: #4cb7d4;
+}
+.administration .adminVelo .velos {
+  background-color: #055d76;
+}
+.administration .adminVelo .velos h4 {
+  color: #f1f1f1;
 }
 
 .pageCriteres {
@@ -1077,6 +1087,9 @@ h3.maps {
 .pageCriteres td {
   border: 1px solid #333;
 }
+.pageCriteres tr th {
+  padding: 10px 0;
+}
 .pageCriteres tr td {
   padding: 5px 0;
   text-align: center;
@@ -1086,14 +1099,19 @@ h3.maps {
   padding-left: 3vw;
 }
 .pageCriteres tr .supprimer {
+  padding: 5px 15px;
   background-color: crimson;
+  color: #f1f1f1;
   border-radius: 5px;
 }
 .pageCriteres tr .modifier {
-  background-color: yellowgreen;
+  padding: 5px 15px;
+  background-color: rgb(114, 168, 5);
+  color: #f1f1f1;
   border-radius: 5px;
 }
 .pageCriteres tr .validerModif {
+  padding: 5px 15px;
   background-color: #055d76;
   color: #f1f1f1;
   border-radius: 5px;
