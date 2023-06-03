@@ -35,10 +35,17 @@ function suppression($critere)
         // afficherTableau($_POST['critere']);
         // afficherTableau($_POST['nom_colonne_id_critere']);
         // afficherTableau($_POST['id_critere']);
-        if (deleteDBCritereItem($_POST['critere'], $_POST['nom_colonne_id_critere'], $_POST['id_critere'])) {
-            ajouterMessageAlerte("Suppression effectuée.", "vert");
+        // echo "nb dans l'id = ".compterVelos($_POST['nom_colonne_id_critere'], $_POST['id_critere']);
+
+        if (compterVelos($_POST['nom_colonne_id_critere'], $_POST['id_critere']) > 0) {
+            ajouterMessageAlerte($_POST['critere'] . " non vide, suppression non effectuée.", "rouge");
             header('location:' . URL . "admin/accueilAdmin");
-        };
+        } else {
+            if (deleteDBCritereItem($_POST['critere'], $_POST['nom_colonne_id_critere'], $_POST['id_critere'])) {
+                ajouterMessageAlerte("Suppression effectuée dans " . $critere . " .", "vert");
+                header('location:' . URL . "admin/" . $critere . "/visualisation");
+            }
+        }
     } else {
         ajouterMessageAlerte("Vous n'avez le droit d'être là !", "rouge");
         header('location:' . URL . "accueil");

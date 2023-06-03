@@ -94,6 +94,9 @@ try {
                             case "visualisation":
                                 visualisation($url[1]);
                                 break;
+                            case "validationSuppression":
+                                suppression($url[1]);
+                                break;
 
                                 // case "creation":
                                 //     echo "creation nb_vitesses";
@@ -106,6 +109,9 @@ try {
                             case "visualisation":
                                 visualisation($url[1]);
                                 break;
+                            case "validationSuppression":
+                                suppression($url[1]);
+                                break;
                             case "creation":
                                 echo "creation suspension";
                                 // marquesVisualisation();
@@ -116,6 +122,9 @@ try {
                         switch ($url[2]) {
                             case "visualisation":
                                 visualisation($url[1]);
+                                break;
+                            case "validationSuppression":
+                                suppression($url[1]);
                                 break;
                             case "creation":
                                 echo "creation cadre";
@@ -128,6 +137,9 @@ try {
                             case "visualisation":
                                 visualisation($url[1]);
                                 break;
+                            case "validationSuppression":
+                                suppression($url[1]);
+                                break;
                             case "creation":
                                 echo "creation roues";
                                 // marquesVisualisation();
@@ -138,6 +150,9 @@ try {
                         switch ($url[2]) {
                             case "visualisation":
                                 visualisation($url[1]);
+                                break;
+                            case "validationSuppression":
+                                suppression($url[1]);
                                 break;
                             case "creation":
                                 echo "creation type";

@@ -40,4 +40,18 @@ function deleteDBCritereItem($table, $colonne, $id){
     return $validationOk;
 }
 
+function compterVelos($colonne, $id){
+    $req = "SELECT count(*) as 'nbVelos' from velos
+    WHERE $colonne = :id
+    ";
+    $stmt = getBDD()->prepare($req);
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+    $resultat = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $resultat['nbVelos'];
 
+
+
+
+}
