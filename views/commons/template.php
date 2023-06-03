@@ -25,6 +25,7 @@
         unset($_SESSION['alert']);
     }
     ?>
+
     <div class="bodycontent">
         <?= $page_content ?>
     </div>

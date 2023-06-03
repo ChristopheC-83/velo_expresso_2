@@ -2,7 +2,7 @@
     <h1>Visualisation :</h1>
     <h2> <?= $critere ?></h2>
 
-
+    <button class="retour_admin"><a href="<?= URL ?>admin/accueilAdmin"><p><= Retour</p></a></button>
     <?php
     $id_critere =  $nomColonnes[0]['nomColonne'];
     $nom_critere =  $nomColonnes[1]['nomColonne'];
@@ -72,7 +72,7 @@
                                 <input type="hidden" name="nom_colonne_id_critere" value="<?= $id_critere ?>">
                                 <input type="hidden" name="nom_colonne_critere" value="<?= $nom_critere ?>">
                                 <input type="hidden" name="critere" value="<?= $critere ?>">
-                                <button class="modifier" type="submit">Valider Modif.</button>
+                                <button class="validerModif" type="submit">Valider Modif.</button>
                             </td>
                         </tr>
                     </form>
@@ -91,7 +91,7 @@
 
 
 
-
+<button class="raccourci_creation"><a href="<?= URL ?>admin/<?= $critere ?>/creation"><p>Créer une valeur pour  : <?= $critere ?></p></a></button>
 
 
 </div>

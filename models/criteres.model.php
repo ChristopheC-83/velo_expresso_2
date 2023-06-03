@@ -17,7 +17,8 @@ function getInfosCriteres($critere, $nom_critere)
     return $criteresItems;
 }
 
-function getNomColonnes($critere){
+function getNomColonnes($critere)
+{
     $req = "SELECT COLUMN_NAME as nomColonne
     FROM INFORMATION_SCHEMA.COLUMNS
     WHERE TABLE_NAME = '$critere'; 
@@ -28,7 +29,8 @@ function getNomColonnes($critere){
     $stmt->closeCursor();
     return $nomColonnes;
 }
-function deleteDBCritereItem($table, $colonne, $id){
+function deleteDBCritereItem($table, $colonne, $id)
+{
     $req = "DELETE from $table
     WHERE $colonne = :id
     ";
@@ -40,7 +42,8 @@ function deleteDBCritereItem($table, $colonne, $id){
     return $validationOk;
 }
 
-function compterVelos($colonne, $id){
+function compterVelos($colonne, $id)
+{
     $req = "SELECT count(*) as 'nbVelos' from velos
     WHERE $colonne = :id
     ";
@@ -52,7 +55,8 @@ function compterVelos($colonne, $id){
     return $resultat['nbVelos'];
 }
 
-function updateCritere($table, $colonne_id_critere, $colonne_nom_critere, $id, $new){
+function updateCritere($table, $colonne_id_critere, $colonne_nom_critere, $id, $new)
+{
     $req = "UPDATE $table set $colonne_nom_critere = :new
     WHERE $colonne_id_critere = :id
     ";
@@ -63,4 +67,14 @@ function updateCritere($table, $colonne_id_critere, $colonne_nom_critere, $id, $
     $validationOk = ($stmt->rowCount() > 0);
     $stmt->closeCursor();
     return $validationOk;
+}
+function createCritere($table, $nom_critere, $info_critere)
+{
+    $req = "INSERT INTO $table ($nom_critere) VALUES (:info_critere)
+    ";
+    $stmt = getBDD()->prepare($req);
+    // $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $stmt->bindValue(':info_critere', $info_critere, PDO::PARAM_STR);
+    $stmt->execute();
+    $stmt->closeCursor();
 }

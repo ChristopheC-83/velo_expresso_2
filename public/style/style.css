@@ -1047,6 +1047,26 @@ h3.maps {
   background-color: green;
 }
 
+.pageCriteres {
+  position: relative;
+}
+.pageCriteres .retour_admin {
+  display: block;
+  transform: translateX(3%);
+  padding: 10px 20px;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px #333;
+  background-color: #055d76;
+}
+.pageCriteres .retour_admin a {
+  color: #f1f1f1;
+  font-weight: bold;
+}
+.pageCriteres .retour_admin:hover {
+  background-color: #2095b6;
+  transition: all 0.2s;
+}
 .pageCriteres table {
   width: 90%;
   margin: 20px auto;
@@ -1067,9 +1087,34 @@ h3.maps {
 }
 .pageCriteres tr .supprimer {
   background-color: crimson;
+  border-radius: 5px;
 }
 .pageCriteres tr .modifier {
   background-color: yellowgreen;
+  border-radius: 5px;
+}
+.pageCriteres tr .validerModif {
+  background-color: #055d76;
+  color: #f1f1f1;
+  border-radius: 5px;
+}
+.pageCriteres .raccourci_creation {
+  display: block;
+  padding: 10px 20px;
+  margin: 20px auto;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px #333;
+  background-color: #055d76;
+}
+.pageCriteres .raccourci_creation a {
+  color: #f1f1f1;
+  font-weight: bold;
+}
+.pageCriteres .raccourci_creation:hover {
+  background-color: #2095b6;
+  transform: translateY(2px);
+  box-shadow: 2px 0px 2px #333;
+  transition: all 0.2s;
 }
 
 body {

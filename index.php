@@ -87,9 +87,12 @@ try {
                             case "validationModification":
                                 modification($url[1]);
                                 break;
-                                // case "creation":
-                                //     creation($url[2]);
-                                //     break;
+                            case "creation":
+                                creation($url[1]);
+                                break;
+                            case "validationCreation":
+                                validationCreation($url[1]);
+                                break;
                         }
                         break;
                     case "nb_vitesses":
@@ -103,10 +106,12 @@ try {
                             case "validationModification":
                                 modification($url[1]);
                                 break;
-                                // case "creation":
-                                //     echo "creation nb_vitesses";
-                                // marquesVisualisation();
-                                // break;
+                            case "creation":
+                                creation($url[1]);
+                                break;
+                            case "validationCreation":
+                                validationCreation($url[1]);
+                                break;
                         }
                         break;
                     case "suspension":
@@ -117,12 +122,14 @@ try {
                             case "validationSuppression":
                                 suppression($url[1]);
                                 break;
-                                case "validationModification":
-                                    modification($url[1]);
-                                    break;
+                            case "validationModification":
+                                modification($url[1]);
+                                break;
                             case "creation":
-                                echo "creation suspension";
-                                // marquesVisualisation();
+                                creation($url[1]);
+                                break;
+                            case "validationCreation":
+                                validationCreation($url[1]);
                                 break;
                         }
                         break;
@@ -134,12 +141,14 @@ try {
                             case "validationSuppression":
                                 suppression($url[1]);
                                 break;
-                                case "validationModification":
-                                    modification($url[1]);
-                                    break;
+                            case "validationModification":
+                                modification($url[1]);
+                                break;
                             case "creation":
-                                echo "creation cadre";
-                                // marquesVisualisation();
+                                creation($url[1]);
+                                break;
+                            case "validationCreation":
+                                validationCreation($url[1]);
                                 break;
                         }
                         break;
@@ -151,12 +160,14 @@ try {
                             case "validationSuppression":
                                 suppression($url[1]);
                                 break;
-                                case "validationModification":
-                                    modification($url[1]);
-                                    break;
+                            case "validationModification":
+                                modification($url[1]);
+                                break;
                             case "creation":
-                                echo "creation roues";
-                                // marquesVisualisation();
+                                creation($url[1]);
+                                break;
+                            case "validationCreation":
+                                validationCreation($url[1]);
                                 break;
                         }
                         break;
@@ -168,12 +179,14 @@ try {
                             case "validationSuppression":
                                 suppression($url[1]);
                                 break;
-                                case "validationModification":
-                                    modification($url[1]);
-                                    break;
+                            case "validationModification":
+                                modification($url[1]);
+                                break;
                             case "creation":
-                                echo "creation type";
-                                // marquesVisualisation();
+                                creation($url[1]);
+                                break;
+                            case "validationCreation":
+                                validationCreation($url[1]);
                                 break;
                         }
                         break;
