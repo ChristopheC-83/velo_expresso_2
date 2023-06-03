@@ -50,8 +50,17 @@ function compterVelos($colonne, $id){
     $resultat = $stmt->fetch(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
     return $resultat['nbVelos'];
+}
 
-
-
-
+function updateCritere($table, $colonne_id_critere, $colonne_nom_critere, $id, $new){
+    $req = "UPDATE $table set $colonne_nom_critere = :new
+    WHERE $colonne_id_critere = :id
+    ";
+    $stmt = getBDD()->prepare($req);
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $stmt->bindValue(':new', $new, PDO::PARAM_STR);
+    $stmt->execute();
+    $validationOk = ($stmt->rowCount() > 0);
+    $stmt->closeCursor();
+    return $validationOk;
 }

@@ -84,6 +84,9 @@ try {
                             case "validationSuppression":
                                 suppression($url[1]);
                                 break;
+                            case "validationModification":
+                                modification($url[1]);
+                                break;
                                 // case "creation":
                                 //     creation($url[2]);
                                 //     break;
@@ -97,7 +100,9 @@ try {
                             case "validationSuppression":
                                 suppression($url[1]);
                                 break;
-
+                            case "validationModification":
+                                modification($url[1]);
+                                break;
                                 // case "creation":
                                 //     echo "creation nb_vitesses";
                                 // marquesVisualisation();
@@ -112,6 +117,9 @@ try {
                             case "validationSuppression":
                                 suppression($url[1]);
                                 break;
+                                case "validationModification":
+                                    modification($url[1]);
+                                    break;
                             case "creation":
                                 echo "creation suspension";
                                 // marquesVisualisation();
@@ -126,6 +134,9 @@ try {
                             case "validationSuppression":
                                 suppression($url[1]);
                                 break;
+                                case "validationModification":
+                                    modification($url[1]);
+                                    break;
                             case "creation":
                                 echo "creation cadre";
                                 // marquesVisualisation();
@@ -140,6 +151,9 @@ try {
                             case "validationSuppression":
                                 suppression($url[1]);
                                 break;
+                                case "validationModification":
+                                    modification($url[1]);
+                                    break;
                             case "creation":
                                 echo "creation roues";
                                 // marquesVisualisation();
@@ -154,6 +168,9 @@ try {
                             case "validationSuppression":
                                 suppression($url[1]);
                                 break;
+                                case "validationModification":
+                                    modification($url[1]);
+                                    break;
                             case "creation":
                                 echo "creation type";
                                 // marquesVisualisation();

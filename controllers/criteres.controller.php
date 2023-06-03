@@ -51,3 +51,34 @@ function suppression($critere)
         header('location:' . URL . "accueil");
     }
 }
+
+function modification($critere)
+{
+    if (estConnecte()) {
+        // afficherTableau($_POST['critere']);
+        // afficherTableau($_POST['nom_colonne_id_critere']);
+        // afficherTableau($_POST['nom_colonne_critere']);
+        // afficherTableau($_POST['id_critere']);
+        // afficherTableau($_POST['new_nom_critere']);
+
+        $table = secureHTML($_POST['critere']);
+        $colonne_id_critere = secureHTML($_POST['nom_colonne_id_critere']);
+        $colonne_nom_critere = secureHTML($_POST['nom_colonne_critere']);
+        $id = secureHTML($_POST['id_critere']);
+        $new = secureHTML($_POST['new_nom_critere']);
+
+        if(updateCritere($table, $colonne_id_critere, $colonne_nom_critere, $id, $new)){
+            ajouterMessageAlerte("Modification effectuée", "vert");
+        
+        }else{
+            ajouterMessageAlerte("Modification non faite", "rouge");
+
+        }
+
+
+        header('location:' . URL . "admin/" . $critere . "/visualisation");
+    } else {
+        ajouterMessageAlerte("Vous n'avez le droit d'être là !", "rouge");
+        header('location:' . URL . "accueil");
+    }
+}
