@@ -11,7 +11,7 @@ require_once("./models/visiteurs.model.php");
 function visualisationVelos($neufs)
 {
   if (estConnecte()) {
-    
+
     if ($neufs === 1) {
       $neufs = "neufs";
       $velos = getNeufs();
@@ -38,21 +38,41 @@ function visualisationVelos($neufs)
 function validationVeloSuppression()
 {
   if (estConnecte()) {
-    
+
     $id_velo = secureHTML($_POST['id']);
     $velo = getVelo($id_velo);
     afficherTableau($velo);
 
-    if(deleteDBVelo($id_velo)){
-    
+    if (deleteDBVelo($id_velo)) {
+
       ajouterMessageAlerte("Vélo supprimé !", "vert");
       header('location:' . URL . "admin/accueilAdmin");
-    }else{
-    
+    } else {
+
       ajouterMessageAlerte("Echec de la suppression", "rouge");
       header('location:' . URL . "admin/accueilAdmin");
     }
+  } else {
+    ajouterMessageAlerte("Vous n'avez le droit d'être là !", "rouge");
+    header('location:' . URL . "accueil");
+  }
+}
+function creationVelo()
+{
+  if (estConnecte()) {
 
+    $marques = getMarques();
+    $nb_vitesses = getVitesses();
+
+    $data_page = [
+      "page_description" => "Création d'un vélo dans la bdd",
+      "page_title" => "VE _ Création Velo",
+      "view" => "views/pages/administrateur/velos/creationVelo.view.php",
+      "template" => "views/commons/template.php",
+      "marques" => $marques,
+      "nb_vitesses" => $nb_vitesses,
+    ];
+    genererPage($data_page);
   } else {
     ajouterMessageAlerte("Vous n'avez le droit d'être là !", "rouge");
     header('location:' . URL . "accueil");

@@ -1135,6 +1135,16 @@ h3.maps {
   transition: all 0.2s;
 }
 
+.pageCreationVelo {
+  width: 94%;
+  margin: 10px auto;
+}
+.pageCreationVelo .creation-velo-form {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
 body {
   background-color: #0bbbec;
   color: #333;

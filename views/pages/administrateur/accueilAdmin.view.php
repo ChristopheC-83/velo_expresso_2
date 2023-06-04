@@ -9,14 +9,14 @@
             <h4>Les Neufs</h4>
             <div class="btns_criteres">
                 <a href="<?= URL ?>admin/velos/visualisationVelosNeufs">Voir</a>
-                <a href="<?= URL ?>admin/velos/creation">Créer</a>
+                <a href="<?= URL ?>admin/velos/creationVelo">Créer</a>
             </div>
         </div>
         <div class="critere velos">
             <h4>Les Occasions</h4>
             <div class="btns_criteres">
                 <a href="<?= URL ?>admin/velos/visualisationVelosOccasion">Voir</a>
-                <a href="<?= URL ?>admin/velos/creation">Créer</a>
+                <a href="<?= URL ?>admin/velos/creationVelo">Créer</a>
             </div>
         </div>
     </div>
