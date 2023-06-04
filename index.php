@@ -205,6 +205,15 @@ try {
                             case "creationVelo":
                                 creationVelo();
                                 break;
+                            case "validationCreationVelo":
+                                validationCreationVelo();
+                                break;
+                            case "modificationVelo":
+                                modificationVelo($url[3]);
+                                break;
+                            case "validationModificationVelo":
+                                validationModificationVelo();
+                                break;
                                 // case "validationModification":
                                 //     modification($url[1]);
                                 //     break;

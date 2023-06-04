@@ -21,7 +21,11 @@
                     <td><?= $velo['marque']  ?></td>
                     <td><?= $velo['modele']  ?></td>
                     <td><?= $velo['prix']  ?></td>
-                    <td><button class="modifier"><i class="fa-regular fa-pen-to-square"></i></button></td>
+                    <td><button class="modifier">
+                        <a href="<?= URL ?>admin/velos/modificationVelo/<?= $velo['velo_id'] ?>">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                        </a>
+                    </button></td>
                     <td>
                         <form action="<?= URL ?>admin/velos/validationVeloSuppression" method="post" onSubmit="return confirm('On valide la suppression ?')">
                             <input type="hidden" name="id" value="<?= $velo['velo_id'] ?>">
@@ -37,6 +41,6 @@
 
 
 
-    <?= afficherTableau($velos) ?>
+    <!-- <?= afficherTableau($velos) ?> -->
 
 </div>

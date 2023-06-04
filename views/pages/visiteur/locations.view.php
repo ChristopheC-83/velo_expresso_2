@@ -44,7 +44,7 @@
 
     <tr class="loc-vtt-elec-semi">
         <td>VTT Elec Semi-rigide</td>
-        <td>25 €</td>
+        <td>30 €</td>
         <td>50 €</td>
         <td>40 €</td>
         <td>offert</td>
@@ -55,7 +55,7 @@
         <td>VTT Adulte</td>
         <td>15 €</td>
         <td>25 €</td>
-        <td>20 €</td>
+        <td>25 €</td>
         <td>offert</td>
         <td>125 €</td>
     </tr>
@@ -89,11 +89,11 @@
 
     <tr class="loc-siege">
         <td>Siège Enfant</td>
-        <td>2 €</td>
-        <td>4 €</td>
-        <td>3 €</td>
+        <td>5 €</td>
+        <td>8 €</td>
+        <td>6 €</td>
         <td>offert</td>
-        <td>19 €</td>
+        <td>38 €</td>
     </tr>
 
     <tr class="loc-remorque">

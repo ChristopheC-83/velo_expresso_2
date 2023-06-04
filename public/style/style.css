@@ -934,6 +934,12 @@ h3.maps {
     /* transform: rotate(180deg); */
   }
 }
+.pageMecanique img {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .cartes_velos {
   width: 100%;
   display: flex;
