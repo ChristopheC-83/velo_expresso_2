@@ -330,12 +330,14 @@ footer {
   background: linear-gradient(0deg, rgb(35, 35, 35) 0%, rgb(100, 100, 100) 50%, rgb(35, 35, 35) 100%);
   color: #e9e9e9;
   width: 100%;
-  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 20;
   font-family: Kaushan script;
+  font-size: clamp(16px, 14px + 0.8vw, 24px);
+  letter-spacing: calc(1px + 0.02vw);
+  padding: 10px;
 }
 footer a {
   color: #e9e9e9;
@@ -471,6 +473,9 @@ footer a {
   width: 35%;
   gap: 30px;
 }
+.fenetre-modale .numTel {
+  text-align: center;
+}
 .fenetre-modale .content-form-message {
   display: flex;
   flex-direction: column;
@@ -490,20 +495,24 @@ footer a {
 }
 .fenetre-modale .fermerModaleContact {
   position: absolute;
-  bottom: 10px;
+  bottom: 2vw;
   left: 5%;
   cursor: pointer;
   color: #000;
+  padding: 1vw 2vw;
+  background-color: rgba(241, 241, 241, 0.4);
+  border-radius: 10px;
 }
 .fenetre-modale .envoyerMessage {
   position: absolute;
-  bottom: 10px;
+  bottom: 2vw;
   right: 5%;
   cursor: pointer;
   background: none;
   border: none;
-  padding: 0;
-  margin: 0;
+  padding: 1vw 2vw;
+  background-color: rgba(241, 241, 241, 0.4);
+  border-radius: 10px;
 }
 
 @media (max-width: 900px) {
@@ -514,10 +523,13 @@ footer a {
     flex-direction: column;
     margin-bottom: 50px;
   }
-  .content-modale .content-form-info,
+  .content-modale .content-form-info {
+    width: 100%;
+    margin-bottom: 0px;
+  }
   .content-modale .content-form-message {
     width: 100%;
-    margin-bottom: 0;
+    margin-bottom: 20px;
   }
   .content-modale input {
     width: 100%;
@@ -687,7 +699,7 @@ h3.maps {
 }
 
 .container-reseaux {
-  margin-bottom: 100px;
+  margin-bottom: 150px;
 }
 
 .reseaux-logo {
@@ -698,17 +710,17 @@ h3.maps {
   align-items: center;
 }
 .reseaux-logo img {
-  width: 120px;
-  filter: drop-shadow(4px 4px 4px #055d76);
+  width: calc(50px + 6vw);
+  filter: drop-shadow(2px 2px 8px #055d76);
 }
 .reseaux-logo .img1 {
-  animation: moveImg1 7s linear infinite;
+  animation: moveImg1 8s linear infinite;
 }
 .reseaux-logo .img2 {
-  animation: moveImg1 6s 2s linear infinite;
+  animation: moveImg1 6s 0.25s linear infinite;
 }
 .reseaux-logo .img3 {
-  animation: moveImg1 8s 1s linear infinite;
+  animation: moveImg1 7s 0.5s linear infinite;
 }
 @keyframes moveImg1 {
   0% {
@@ -1151,6 +1163,102 @@ h3.maps {
   margin: 10px 0;
 }
 
+.pageSorties {
+  max-width: 1440px;
+}
+.pageSorties .sorties1 {
+  width: 100%;
+  height: 45vw;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pageSorties img {
+  height: 100%;
+  max-width: 40vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px #333;
+}
+
+.sorties2 {
+  margin-top: 80px;
+}
+
+.h3Sorties {
+  margin: 3vw;
+  line-height: 30px;
+  color: black;
+}
+
+.groupesSorties {
+  width: 94%;
+  display: flex;
+  margin: 20px auto 40px;
+}
+
+.groupeSorties {
+  width: 30vw;
+  border: 1px solid #f1f1f1;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px;
+  padding: 20px;
+  background-color: rgba(51, 51, 51, 0.2);
+}
+.groupeSorties .nomGroupe {
+  font-family: Kaushan script;
+}
+.groupeSorties p {
+  margin-bottom: 40px;
+  color: #f1f1f1;
+  text-shadow: 1px 1px 1px #666;
+  line-height: 25px;
+}
+.groupeSorties:nth-child(2) {
+  margin: 0 15px;
+}
+
+.conclusionSortie {
+  margin-bottom: 100px;
+}
+
+@media (max-width: 1440px) {
+  .pageSorties .sorties1 {
+    width: 94%;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 900px) {
+  .pageSorties .sorties1 {
+    flex-direction: column;
+    height: auto;
+  }
+  .pageSorties .sorties2 {
+    flex-direction: column-reverse;
+  }
+  .pageSorties img {
+    width: 80vw;
+  }
+  .pageSorties .groupesSorties {
+    flex-direction: column;
+  }
+  .pageSorties .groupeSorties {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    line-height: 25px;
+  }
+  .pageSorties .groupeSorties .nomGroupe {
+    margin-bottom: 0;
+  }
+  .pageSorties .conclusionSortie {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 80px;
+  }
+}
 body {
   background-color: #0bbbec;
   color: #333;

@@ -8,7 +8,7 @@
         <?php if($velo['neuf']==1){ echo "neuf";}else{echo "occasion";} ?>
     </h3>
 
-    <?php  afficherTableau($velo )?>
+    <!-- <?php  afficherTableau($velo )?> -->
 
 
     <form action="<?= URL ?>admin/velos/validationModificationVelo" method="post" enctype="multipart/form-data">

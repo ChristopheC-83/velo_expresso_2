@@ -1,5 +1,5 @@
 <div class="velos">
-    <h1>Vélos d'occasion</h1>
+    <h1>Les vélos d'occasion</h1>
     <h2>Disponibles dès maintetant en magasin.</h2>
 
     <div class="cartes_velos">

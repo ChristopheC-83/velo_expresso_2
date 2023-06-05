@@ -1,6 +1,7 @@
-<div class="pageMecanique">
+<div class="pageMecanique loc-location">
 
-    <h1>Mécanique</h1>
+    <h1>L'entretien de vos montures</h1>
+    
     <img src="public/assets/images/mecanique/atelier.jpg" alt="atelier vélo">
    
    

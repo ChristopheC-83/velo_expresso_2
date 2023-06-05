@@ -11,10 +11,13 @@ footer {
   );
   color: #e9e9e9;
   width: 100%;
-  height: 30px;
+  // height: 30px;
   @include flexMid;
   z-index: 20;
   font-family: Kaushan script;
+  font-size: clamp(16px, calc(14px + 0.8vw), 24px);
+  letter-spacing: calc(1px + 0.02vw);
+  padding: 10px;
   a {
     color: #e9e9e9;
   }

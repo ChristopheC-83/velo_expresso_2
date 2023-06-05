@@ -12,12 +12,14 @@
 
             </div>
             <button type="submit" class="envoyerMessage">
-                <h4>✅Envoyer</h4>
+                <h4>✅ Envoyer</h4>
             </button>
+            
             <h4 class="fermerModaleContact">❌ Annuler</h4>
             <div class="content-form-message">
                 <label for="messageFormulaire">Votre message :</label>
                 <textarea name="messageFormulaire" id="messageFormulaire" cols="30" rows="10" placeholder="Nous y répondrons dès que possible !
+                
                 Merci !"></textarea>
             </div>
         </div>

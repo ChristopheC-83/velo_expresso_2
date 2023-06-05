@@ -107,7 +107,7 @@ h3.maps {
 
 .container-reseaux{
 
-    margin-bottom: 100px;
+    margin-bottom: 150px;
 }
 
 .reseaux-logo {
@@ -118,18 +118,18 @@ h3.maps {
   align-items: center;
 
   img {
-    width: 120px;
-    filter : drop-shadow(4px 4px 4px #055d76) ;
+    width:calc(50px + 6vw);
+    filter : drop-shadow(2px 2px 8px #055d76) ;
 }
 
 .img1{
-    animation : moveImg1 7s linear infinite;
+    animation : moveImg1 8s linear infinite;
 }
 .img2{
-    animation : moveImg1 6s 2s linear infinite;
+    animation : moveImg1 6s 0.25s linear infinite;
 }
 .img3{
-    animation : moveImg1 8s 1s linear infinite;
+    animation : moveImg1 7s 0.5s linear infinite;
 }
 
 @keyframes moveImg1{
