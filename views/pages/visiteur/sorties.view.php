@@ -20,17 +20,17 @@
     <h2>Les groupes possibles</h2>
     <div class="groupesSorties">
         <div class="groupeSorties">
-            <h3 class="nomGroupe">Les Cosi :</h3><br><br><p>Pour une balade conviviale et découvrir ou redécouvrir nos plus beaux parcours avec comme objectif : le plaisir de rouler ensemble.</p>
+            <h2 class="nomGroupe">Les Cosi :</h2><br><br><p>Pour une balade conviviale et découvrir ou redécouvrir nos plus beaux parcours avec comme objectif : le plaisir de rouler ensemble.<br><br>Groupe accessible à toutes et tous évidemment ! Vous découvrez ? Laissez vous porter par le groupe !</p>
         </div>
 
         <div class="groupeSorties">
 
-            <h3 class="nomGroupe">Les Ristretto :</h3><br><br><p>Un objectif simple => les crampes ! Oui, là on cherche à se rentrer dedans. Le goût de l'effort et du challenge physique. Mais toujours avec le sourire et la convivialité !</p>
+            <h2 class="nomGroupe">Les Ristretto :</h2><br><br><p>Un objectif simple => les crampes ! <br><br>Oui, là on cherche à se rentrer dedans. Le goût de l'effort et du challenge physique. Mais toujours avec le sourire et la convivialité !</p>
         </div>
 
         <div class="groupeSorties">
 
-            <h3 class="nomGroupe">Les Cafés Frappés :</h3><br><br><p> "il est où le camion pour nous monter ? nous, on veut faire des descentes !!!". Bon vous l'avez compris, ici on priorise le débattement, les descentes, les sauts...</p>
+            <h2 class="nomGroupe">Les Cafés Frappés :</h2><br><br><p> "il est où le camion pour nous monter ? nous, on veut faire des descentes !!!".<br><br> Bon vous l'avez compris, ici on priorise le débattement, les descentes, les sauts...</p>
 
         </div>
     </div>

@@ -1190,7 +1190,8 @@ h3.maps {
 .h3Sorties {
   margin: 3vw;
   line-height: 30px;
-  color: black;
+  color: #f1f1f1;
+  text-shadow: 2px 2px 2px #333;
 }
 
 .groupesSorties {
