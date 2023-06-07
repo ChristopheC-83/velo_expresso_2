@@ -17,7 +17,7 @@
         <h3 class="h3Sorties">Qu'il fasse chaud, froid, férié ou pas.... il y aura sûrement quelqu'un devant le magasin dimanche matin ! Un doute ? passez nous voir et rejoignez notre groupe Whatsapp pour rester informé !</h3>
 
     </div>
-    <h2>Les groupes possibles</h2>
+    <h2>Les groupes possibles ?</h2>
     <div class="groupesSorties">
         <div class="groupeSorties">
             <h2 class="nomGroupe">Les Cosi :</h2><br><br><p>Pour une balade conviviale et découvrir ou redécouvrir nos plus beaux parcours avec comme objectif : le plaisir de rouler ensemble.<br><br>Groupe accessible à toutes et tous évidemment ! Vous découvrez ? Laissez vous porter par le groupe !</p>
