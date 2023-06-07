@@ -1,6 +1,6 @@
 <div class="velo">
 
-    <h2><?= $velo['marque'] ?> <?= $velo['modele'] ?></h2>
+    <h2><?= $velo['marque'] ?> <?= $velo['modele'] ?> - <?= $velo['prix'] ?> €</h2>
 
     <div class="carte-velo-detaille">
         <img src="<?= URL ?>public/assets/images/velos/<?= $velo['photo'] ?>" alt="">

@@ -96,14 +96,7 @@
         <td>38 €</td>
     </tr>
 
-    <tr class="loc-remorque">
-        <td>Remorque Enfant</td>
-        <td>8 €</td>
-        <td>13 €</td>
-        <td>11 €</td>
-        <td>offert</td>
-        <td>68 €</td>
-    </tr>
+   
 
 
 </table>

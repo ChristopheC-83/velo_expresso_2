@@ -82,13 +82,18 @@
 }
 
 .loc-tarifs th,.loc-tarifs td{
-    border : 2px solid #fff;
+    border : 2px solid #333;
     padding: 15px 0 15px 0;
     font-size: 22px;
     
 }
 
-.loc-duree, .loc-vtt-elec-semi, .loc-vtt-enfant, .loc-vtt-tandem, .loc-remorque{
+.loc-vtt-elec-susp, .loc-vtt-adulte, .loc-route, .loc-siege{
+    color : #333;
+    text-shadow: 0px 1px 1px #333;
+}
+
+.loc-duree, .loc-vtt-elec-semi, .loc-vtt-enfant, .loc-vtt-tandem{
     background-color: #007fa2;
 }
 
@@ -110,6 +115,7 @@
     border-radius: 25px;
     box-shadow: 2px 2px 4px #333;
     text-shadow:2px 2px 4px #333 ;
+    background-color: #007fa2;
 
 
 }

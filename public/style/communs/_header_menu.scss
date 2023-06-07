@@ -8,9 +8,9 @@ header {
   background-color: #c4c4c4;
   background: linear-gradient(
     0deg,
-    rgb(35, 35, 35) 0%,
-    rgba(100, 100, 100, 1) 50%,
-    rgba(35, 35, 35, 1) 100%
+    #033b4b 0%,
+    #0bbbec 50%,
+    #033b4b 100%
   );
   color: #e9e9e9;
   display: flex;
@@ -38,23 +38,27 @@ header {
   align-items: center;justify-content: center;
   text-shadow: 1px 1px 1px #055D76;
   cursor: pointer;
+  color: #e9e9e9;
 }
 
 .navigation {
   padding: 0.4vw 0 0.8vw;
-  background-color: #055D76;
+  background-color: #0bbbec;
   box-shadow: inset 0px -1px 10px #333;
-  max-height: 35px;
+  max-height: 50px;
   .navlinks-container {
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-evenly;
-    color: #fff;
+    align-items: center;
+    color: #333;
+    // padding-bottom: 10px;
     a {
-      font-size: clamp(16px, calc(10px + 0.6vw), 20px);
+      font-size: clamp(16px, calc(10px + 0.72vw), 24px);
       font-weight: 500;
       position: relative;
-      color: #fff;
+      color: #333;
 
       &::after {
         content: "";
@@ -93,6 +97,8 @@ header {
 
     .navlinks-container {
       flex-direction: column;
+      justify-content: start;
+      align-items: start;
 
       a {
         margin: 20px 10px 20px 5vw;

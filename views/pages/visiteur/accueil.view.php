@@ -19,6 +19,11 @@
 
     <div class="separateur"></div>
 
+    <h2>Nos marques partenaires</h2>
+
+    
+    <div class="separateur"></div>
+
     <div class="container-maps">
         <div class="texte-maps">
             <h2 class="maps">Nous trouver ? C'est ici !</h2>
